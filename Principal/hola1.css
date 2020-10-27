@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: url(Imagenes/Fondo.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+}
+* {
+    box-sizing: border-box;
+}
+.contenedor{
+    width: 100%;
+    padding: 10px;
+}
+.formulario{
+    background: rgba(255, 255, 255, 0.712);
+    margin-top: 150px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input{
+    background-color: rgba(255, 255, 255, 0.082);
+}
+
+h1{
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+.Des{
+    margin-bottom: 0px;
+}
+
+.Ini{
+    text-align: center;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    padding: 5px 120px;
+    
+}
+
+.Ini h3{
+    background-color: rgba(19, 250, 238, 0.212);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.Ini a{
+    color: black;
+
+}
+
+input[type="text"],
+input[type="password"]{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+.input-contenedor{
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+.icon{
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+.button{
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background:  #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background: cadetblue;
+}
+p{
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+      color: #1a2537;
+    font-weight: 600;
+}
+.link:hover{
+     color: cadetblue;
+}
+@media(min-width:768px)
+{
+    .formulario{
+        margin: auto;
+        width: 1000px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}
