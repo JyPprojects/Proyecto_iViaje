@@ -9,7 +9,7 @@ if(!isset($_SESSION["usuario"])){
 else{
 }
 
-if (isset($_POST["exit"])){
+if (isset($_GET["exit"])){
 
     session_destroy();
     header("Location: ../Principal/index.php");

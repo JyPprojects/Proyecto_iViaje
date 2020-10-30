@@ -14,7 +14,6 @@ include("conexion.php");
 if (isset($_POST["login"])){
     global $usuario1;
     $usuario1=mysqli_real_escape_string($conexion, $_POST["usu"]);
-    
     $contraseña1=mysqli_real_escape_string($conexion, $_POST["pass"]);
     
         if($usuario1 !='' && $contraseña1 !=''){
