@@ -25,7 +25,7 @@ $eleccion=mysqli_fetch_row($resultado1);
     else{
 ?>
         <article class="sidebar2">
-        <a href=""><img src="Imagenes/caravana2.png" alt="Error al cargar">
+        <a href=""><img src="Imagenes/caravana1.png" alt="Error al cargar">
         <h2>Tu Viaje</h2></a>
         </article>
 <?php
