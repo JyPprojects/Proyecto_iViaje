@@ -22,7 +22,8 @@ include("../Login_registro/sesion.php");
             <ul class="nav">
                 <li><a href=""><h2><?php echo ucfirst($_SESSION["usuario"]); ?></h2></a>
                     <ul>
-                        <li><a href="<?php $_SERVER['PHP_SELF']?>?exit='exit'"><h2>Exit</h2></li></a>
+                        <li><a href=""><h2>Perfil</h2></a></li>
+                        <li><a href="<?php $_SERVER['PHP_SELF']?>?exit='exit'"><h2>Exit</h2></a></li>
                     </ul>
                 </li>
             </ul>

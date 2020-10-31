@@ -31,7 +31,7 @@ h1, h2, h3 {
     top: 0;
     left: 0;
 }
-ul, ol {
+ul {
     list-style:none;
 }
 
@@ -40,34 +40,33 @@ ul, ol {
 }
 
 .nav li a {
-    
     color:#fff;
     text-decoration:none;
     padding:10px 12px;
     display:block;
 }
 
-.nav li a:hover {
-    
-}
 
 .nav li ul {
     display:none;
     position:absolute;
-    min-width:140px;
+    min-width:100px;
+    top:30px;
 }
 
 .nav li:hover > ul {
     display:block;
+    
 }
 
 .nav li ul li {
-    position:relative;
+    position: static;
+    
 }
 
-.nav li ul li ul {
-    right:-140px;
-    top:0px;
+.nav ul li ul {
+    right:140px;
+    
 }
 
 .header h1{
@@ -81,9 +80,9 @@ ul, ol {
     color: #1a2537;
     font-size: 20px;
     margin-right: 0px;
-    float: right;
+    float: left;
     margin: 0;
-    padding: 20px;
+    padding: 5px;
 }
 
 .sidebar1{
