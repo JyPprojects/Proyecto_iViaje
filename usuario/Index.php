@@ -35,7 +35,7 @@ include("../Login_registro/sesion.php");
     </section>
 
             <article class="sidebar1">
-                <a href=""><img src="Imagenes/mas.png" alt="Error al cargar"> 
+                <a href="../Pagina3/pagina3.php?nuevoviaje='nuevoviaje'"><img src="Imagenes/mas.png" alt="Error al cargar"> 
                 <h2>Nuevo Viaje</h2></a>
             </article>
 
