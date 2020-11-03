@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION["usuario"])){
 
-    header("Location: ../Principal/index.php");
+    header("Location: login_registro/index.php");
 }
 else{
 }
@@ -12,7 +12,7 @@ else{
 if (isset($_GET["exit"])){
 
     session_destroy();
-    header("Location: ../Principal/index.php");
+    header("Location: login_registro/index.php");
     
 }
 else{    

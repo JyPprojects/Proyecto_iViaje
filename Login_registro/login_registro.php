@@ -6,10 +6,9 @@ $registro="";
 error_reporting();
 
 //INCLUDES
-include("conexion.php");
+include("../php/conexion.php");
 
 //LOGIN 
-
 
 if (isset($_POST["login"])){
     global $usuario1;
@@ -28,11 +27,11 @@ if (isset($_POST["login"])){
                     $_SESSION["usuario"]=$_POST["usu"];
                         if(isset($_POST["cookie"])){
                             setcookie("cookie1", $_POST["usu"],time()+604800);
-                            header("Location: ../usuario/Index.php");
+                            header("Location: ../Index.php");
                                 
                         }
                         else{
-                            header("Location: ../usuario/Index.php");
+                            header("Location: ../Index.php");
     
                         }  
                                                 
@@ -50,8 +49,6 @@ else{
 }
     
 }
-
-
 
 //REGISTRO
 
@@ -116,10 +113,5 @@ if(isset($_POST["enviar"])){
             }
 
     }
-
-
-
-
-
 
 ?>

@@ -1,9 +1,7 @@
 <?php 
 //INCLUDES
-include("../Login_registro/sesion.php");
+include("php/sesion.php");
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -11,10 +9,10 @@ include("../Login_registro/sesion.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenid@ | <?php echo ucfirst($_SESSION["usuario"]); ?> </title>
-    <link rel="stylesheet" href="CSS/estilo3.css">
-    <link rel="stylesheet" href="CSS/fontello.css">
+    <link rel="stylesheet" href="menu_post-login/CSS/estilo3.css">
+    <link rel="stylesheet" href="menu_post-login/CSS/fontello.css">
 </head>
-<body background="Imagenes/fondo avion.jpg">
+<body background="menu_post-login/Imagenes/fondo avion.jpg">
 
     <header>
         <div class="header" >
@@ -35,11 +33,11 @@ include("../Login_registro/sesion.php");
     </section>
 
             <article class="sidebar1">
-                <a href="../Pagina3/pagina3.php?nuevoviaje='nuevoviaje'"><img src="Imagenes/mas.png" alt="Error al cargar"> 
+                <a href="formulario/pagina3.php?nuevoviaje='nuevoviaje'"><img src="menu_post-login/Imagenes/mas.png" alt="Error al cargar"> 
                 <h2>Nuevo Viaje</h2></a>
             </article>
 
-<?php include("../Pagina2/eleccion.php");?> 
+<?php include("eleccion.php");?> 
 
 
         
