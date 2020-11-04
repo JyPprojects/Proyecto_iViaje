@@ -12,9 +12,17 @@
 
     <form method="post" >
         <p><h2>Elige el nombre de tu viaje: </h2></p>
-        <input type="text" name="viaje" id="">
-        <input type="submit" name="">
-
+        <input type="text" name="nviaje" id="">
+        
+<br>
+        <p>Fecha inicio:</p>
+        <input type="date" name="fecha_ini">
+        <p>Fecha fin:</p>
+        <input type="date" name="fecha_fin">
+        <p>Bote:</p>
+        <input type="number" name="bote">
+<br><br>
+        <input type="submit" name="enviar">
     </form>
 
 
