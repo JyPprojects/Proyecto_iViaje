@@ -23,6 +23,8 @@
         <input type="number" name="bote">
 <br><br>
         <input type="submit" name="enviar">
+<br><br> 
+       <a href="../Index.php">EXIT</a> 
     </form>
 
 

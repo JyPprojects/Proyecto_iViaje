@@ -1,6 +1,7 @@
 <?php 
 //INCLUDES
-include("../login_registro/conexion.php");
+include("../php/conexion.php");
+include("../php/sesion.php");
 
 
 if (isset($_POST["enviar"])){
@@ -19,9 +20,13 @@ echo $fecha_fin;
 echo "</br>";
 echo $bote;
 
-$sql="INSERT INTO viajes (nombre_viaje, fecha_inicio, fecha_fin) VALUES '$nviaje' , '$fecha_ini', '$fecha_fin'";
-$consulta_insertar=mysqli_query($sql, $conexion);
-$resultado_insertar=mysqli_fetch_row($consulta_insertar);
+
+
+$consulta_viaje="INSERT INTO viajes (id_usuario, nombre_viaje, fecha_inicio, fecha_fin, bote) VALUES ('$_SESSION[id_usuario]', '$nviaje', '$fecha_ini', '$fecha_fin', '$bote')";
+$consulta_insertar=mysqli_query($conexion, $consulta_viaje);
+
+
+
 
 
 
