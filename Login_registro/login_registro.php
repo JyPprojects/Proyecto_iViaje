@@ -19,15 +19,20 @@ if (isset($_POST["login"])){
     
              $consulta1="SELECT contraseña FROM datosusuario WHERE usuario='$usuario1'";
              $resultado1=mysqli_query($conexion, $consulta1);
+             $consultaid1="SELECT id_usuario FROM datosusuario WHERE usuario='$usuario1'";
+             $resultadoid1=mysqli_query($conexion, $consultaid1);
+             $id_usuario=mysqli_fetch_row($resultadoid1);
              $login=mysqli_fetch_row($resultado1);
     
                 if($resultado1->num_rows == 1 && password_verify($contraseña1, $login[0])){
     
                     session_start();
                     $_SESSION["usuario"]=$_POST["usu"];
+                    $_SESSION["id_usuario"]=$id_usuario[0];
                         if(isset($_POST["cookie"])){
                             setcookie("cookie1", $_POST["usu"],time()+604800);
                             header("Location: ../Index.php");
+                            
                                 
                         }
                         else{
