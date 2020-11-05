@@ -77,7 +77,7 @@ if(isset($_POST["enviar"])){
 
             if($usuario1 !='' && $contraseña1 !='' && $correo1 !='' && $nombre1 !='' && $apellidos1 !='' && $fecha_naci1 !=''){
 
-                $consulta2="SELECT * FROM datosusuario WHERE usuario='$usuario1' AND correo='$correo1'";
+                $consulta2="SELECT * FROM datosusuario WHERE usuario='$usuario1' OR correo='$correo1'";
                 $resultado2=mysqli_query($conexion, $consulta2);
                 $comprobar_registro=mysqli_fetch_row($resultado2);
 
