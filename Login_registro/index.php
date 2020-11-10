@@ -33,10 +33,13 @@
                 <input type="password" placeholder="Contraseña" name="pass" required>
                 </div>
 
+                <input type="checkbox" value="Recúerdame" name="cookie"> Recuérdame
+                <br><br>
+
                 <input type="submit" value="Login" class="button" name="login">
-                <p>Al registrarte, aceptará nuestras Condiciones de uso y Política de privacidad.</p>
+                <p>¿Quienes somos? <a href="">Pincha aquí</a></p>
                 <?php echo $error; ?>
-                <input type="checkbox" value="Recúerdame" name="cookie">
+                
             </div>
     </form>
 </body>
