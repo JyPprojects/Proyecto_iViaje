@@ -33,7 +33,7 @@ include("php/sesion.php");
     </section>
 
             <article class="sidebar1">
-                <a href="formulario/pagina3.php?nuevoviaje='nuevoviaje'"><img src="menu_post-login/Imagenes/mas.png" alt="Error al cargar"> 
+                <a href="formulario/formulario.php?nuevoviaje='nuevoviaje'"><img src="menu_post-login/Imagenes/mas.png" alt="Error al cargar"> 
                 <h2>Nuevo Viaje</h2></a>
             </article>
 
