@@ -44,118 +44,117 @@
             </ul>
 
             <div id="tabs-1">
+                <form method="post">
+                    <table id="paso1">
+                        
+                            <tr class="input-contenedor">
+                                <td><p>Nombre Viaje: &nbsp;</p></td>
+                                <td class="cuadro"><input type="text" name="nviaje" required></td>
+                            </tr>
 
-                <table id="paso1">
-                    <form method="post">
-                        <tr class="input-contenedor">
-                            <td><p>Nombre Viaje: &nbsp;</p></td>
-                            <td class="cuadro"><input type="text" name="nviaje"></td>
-                        </tr>
+                            <tr class="input-contenedor">
+                                <td><p>Pais: &nbsp;</p></td>
+                                <td class="cuadro"><input type="text" name="pais" required></td>
+                            </tr>
 
-                        <tr class="input-contenedor">
-                            <td><p>Pais: &nbsp;</p></td>
-                            <td class="cuadro"><input type="text" name="pais"></td>
-                        </tr>
+                            <tr class="input-contenedor">
+                                <td><p>Bote: &nbsp;</p></td>
+                                <td class="cuadro"><input type="number" name="bote" required></td>
+                            </tr>
 
-                        <tr class="input-contenedor">
-                            <td><p>Bote: &nbsp;</p></td>
-                            <td class="cuadro"><input type="number" name="bote"></td>
-                        </tr>
+                            <tr class="input-contenedor">
+                                <td><p>Fecha Inicio Viaje: &nbsp;</p></td>
+                                <td class="cuadro"><input type="date" name="fecha_ini" required></td>
+                            </tr>
 
-                        <tr class="input-contenedor">
-                            <td><p>Fecha Inicio Viaje: &nbsp;</p></td>
-                            <td class="cuadro"><input type="date" name="fecha_ini"></td>
-                        </tr>
+                            <tr class="input-contenedor">
+                                <td><p>Fecha Final Viaje: &nbsp;</p></td>
+                                <td class="cuadro"><input type="date" name="fecha_fin" required></td>
+                            </tr>
 
-                        <tr class="input-contenedor">
-                            <td><p>Fecha Final Viaje: &nbsp;</p></td>
-                            <td class="cuadro"><input type="date" name="fecha_fin"></td>
-                        </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="submit" name="enviar" value="Enviar"></td>
+                            </tr>
+                    </table>
 
-                        <tr>
-                            <td></td>
-                            <td><input type="submit" name="enviar"></td>
-                        </tr>
-                    </form>
-                </table>
-
-                <span class="flechas"><i class="fas fa-arrow-alt-circle-right"></i></span>
+                    <span class="flechas"><i class="fas fa-arrow-alt-circle-right"></i></span>
 
             </div>
 
             <div id="tabs-2">
 
-                <table id="paso1">
+                    <table id="paso1">
 
-                    <tr class="input-contenedor">
-                        <td><p>Medio de transporte: &nbsp;</p></td>
-                        <td class="cuadro">
-                            <select name="Transporte">
-                                <option selected value="0"> Elige una opción </option>
-                                <option value="1">Coche</option> 
-                                <option value="2">Avión</option> 
-                                <option value="3">Caravana</option>
-                                <option value="4">Ave</option>
-                                <option value="5">Tren</option>
-                                <option value="6">Barco</option>
-                                <option value="7">Autobus</option>
-                            </select>
-                        </td>
-                    </tr>
+                        <tr class="input-contenedor">
+                            <td><p>Medio de transporte: &nbsp;</p></td>
+                            <td class="cuadro">
+                                <select name="transporte" required>
+                                    <option selected value="0"> Elige una opción </option>
+                                    <option value="1">Coche</option> 
+                                    <option value="2">Avión</option> 
+                                    <option value="3">Caravana</option>
+                                    <option value="4">Ave</option>
+                                    <option value="5">Tren</option>
+                                    <option value="6">Barco</option>
+                                    <option value="7">Autobus</option>
+                                </select>
+                            </td>
+                        </tr>
 
-                    <tr class="input-contenedor">
-                        <td><p>Cantidad de Coches: &nbsp;</p></td>
-                        <td class="cuadro"><input type="number"></td>
-                    </tr>
+                        <tr class="input-contenedor">
+                            <td><p>Cantidad de Coches: &nbsp;</p></td>
+                            <td class="cuadro"><input type="number" name="cantidad_coche" required></td>
+                        </tr>
 
-                    <tr class="input-contenedor">
-                        <td><p>Combustible: &nbsp;</p></td>
-                        <td class="cuadro">
-                            <select name="Combustible">
-                                <option selected value="0"> Elige una opción </option>
-                                <option value="1">Diesel</option> 
-                                <option value="2">Gasolina</option> 
-                                <option value="3">Hibrido</option>
-                                <option value="4">Electrico</option>
-                            </select>
-                        </td>
-                    </tr>
+                        <tr class="input-contenedor">
+                            <td><p>Combustible: &nbsp;</p></td>
+                            <td class="cuadro">
+                                <select name="combustible">
+                                    <option selected value="0"> Elige una opción </option>
+                                    <option value="1">Diesel</option> 
+                                    <option value="2">Gasolina</option> 
+                                    <option value="3">Hibrido</option>
+                                    <option value="4">Electrico</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <td><input type="submit" name="enviar" value="Enviar"></td>
+                    </table>
 
-                </table>
-
-                <span class="flechas"><i class="fas fa-arrow-alt-circle-left"></i></span>
-                <span class="flechas"><i class="fas fa-arrow-alt-circle-right"></i></span>
-                       
+                    <span class="flechas"><i class="fas fa-arrow-alt-circle-left"></i></span>
+                    <span class="flechas"><i class="fas fa-arrow-alt-circle-right"></i></span>
+                        
             </div>
 
             <div id="tabs-3">
-                <table id="paso1">
+                    <table id="paso1">
 
-                    <tr class="input-contenedor">
-                        <td><p>Tipo de Estancia: &nbsp;</p></td>
-                        <td class="cuadro">
-                            <select name="Tipo de Estancia">
-                                <option selected value="0"> Elige una opción </option>
-                                <option value="1">Hotel</option> 
-                                <option value="2">Casa Rural</option> 
-                                <option value="3">Caravana</option>
-                            </select>
-                        </td>
-                    </tr>
+                        <tr class="input-contenedor">
+                            <td><p>Tipo de Estancia: &nbsp;</p></td>
+                            <td class="cuadro">
+                                <select name="estancia">
+                                    <option selected value="0"> Elige una opción </option>
+                                    <option value="1">Hotel</option> 
+                                    <option value="2">Casa Rural</option> 
+                                    <option value="3">Caravana</option>
+                                </select>
+                            </td>
+                        </tr>
 
-                    <tr class="input-contenedor">
-                        <td><p>Lugar de la Estancia: &nbsp;</p></td>
-                        <td class="cuadro"><input type="text"></td>
-                    </tr>
+                        <tr class="input-contenedor">
+                            <td><p>Dirección de la Estancia: &nbsp;</p></td>
+                            <td class="cuadro"><input type="text" name="d_estancia" required></td>
+                        </tr>
 
-                    <tr class="input-contenedor">
-                        <td><p>Tlfn Estancia: &nbsp;</p></td>
-                        <td class="cuadro"><input type="number"></td>
-                    </tr>
+                        <tr class="input-contenedor">
+                            <td><p>Tlfn Estancia: &nbsp;</p></td>
+                            <td class="cuadro"><input type="number" name="tlfn_estancia" required></td>
+                        </tr>
 
-                </table>
-                <span class="flechas"><i class="fas fa-arrow-alt-circle-left"></i></span> 
-
+                    </table>
+                    <span class="flechas"><i class="fas fa-arrow-alt-circle-left"></i></span> 
+                </form>
             </div>
 
         </div>
