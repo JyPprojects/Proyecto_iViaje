@@ -107,7 +107,7 @@ if(isset($_POST["enviar"])){
                             else{
                                 $consulta3="INSERT INTO datosusuario (usuario, contraseña, correo, fecha, nombre, apellidos) VALUES ('$usuario1', '$hash1', '$correo1', '$fecha_naci1', '$nombre1', '$apellidos1') ";
                                 $resultado3=mysqli_query($conexion, $consulta3);
-            
+                                header("Location: index.php");
                                 $registro="Usuario registrado con éxito";
                             }     
                     }
