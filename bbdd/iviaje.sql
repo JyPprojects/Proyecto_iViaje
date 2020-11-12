@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2020 a las 15:33:55
+-- Tiempo de generación: 13-11-2020 a las 00:40:37
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `catalogo_necesidades` (
   `id_necesidad` int(11) NOT NULL,
+  `id_indice` int(11) NOT NULL,
   `nombre_necesidad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -36,14 +37,16 @@ CREATE TABLE `catalogo_necesidades` (
 -- Volcado de datos para la tabla `catalogo_necesidades`
 --
 
-INSERT INTO `catalogo_necesidades` (`id_necesidad`, `nombre_necesidad`) VALUES
-(1, 'Comida'),
-(2, 'Bebida'),
-(3, 'Utensilios'),
-(4, 'Medio de transporte'),
-(5, 'Combustible'),
-(6, 'Ubicación'),
-(7, 'Estancia');
+INSERT INTO `catalogo_necesidades` (`id_necesidad`, `id_indice`, `nombre_necesidad`) VALUES
+(1, 1, 'Comida'),
+(2, 1, 'Bebida'),
+(3, 1, 'Utensilios'),
+(4, 2, 'Medio de transporte'),
+(5, 2, 'Combustible'),
+(6, 3, 'Ubicación'),
+(7, 3, 'Tipo_estancia'),
+(8, 3, 'Direccion'),
+(9, 3, 'telefono');
 
 -- --------------------------------------------------------
 
@@ -74,7 +77,12 @@ INSERT INTO `datosusuario` (`id_usuario`, `usuario`, `contraseña`, `correo`, `f
 (6, 'PAco', '$2y$10$ZhwGJf.9iVIqKXINl31C2OXZh7XjqCJE9m0Ozfa/fwYm51VgE/GJm', 'pago@gsdfnl.com', '0000-00-00', 'Paco', 'Gomes'),
 (7, 'primo', '$2y$10$ruivUJBPvalpkVpXHSD1G.7pBJFyvjO.XJ5mFc3ntIwhXPW1v0nKC', 'tujuanilloloco@yahoo.es', '0000-00-00', '', ''),
 (8, 'sevi', '$2y$10$/4kOYGlMlE2/JSa52yYEpeJ3tTAVGOCO/H1hAZk2nzUYDl.o.RyY2', 'tusevi@gmail.com', '0000-00-00', 'Alejandro', ''),
-(9, 'PRUEEEEBA', '$2y$10$oaSDHaXufgAWNeSKYt0GButYVc9i7G3vXn8lS4iWyrkY3RJtMhAqe', '241234@hotmail.com', '2020-11-26', 'Prueba1', 'prueba2');
+(9, 'PRUEEEEBA', '$2y$10$oaSDHaXufgAWNeSKYt0GButYVc9i7G3vXn8lS4iWyrkY3RJtMhAqe', '241234@hotmail.com', '2020-11-26', 'Prueba1', 'prueba2'),
+(14, 'gaoniS00009', '$2y$10$sQ/PKAIpSioww1zuGLR12OHiu634Yknee2O5P6m4arnTDSaq/1qmG', 'psdigj@gmail.com', '0001-01-01', 'psfpoj', 'pasdifnjpi'),
+(35, 'prueba 6 millones', '', '', '0000-00-00', '', ''),
+(36, 'prueba 7 millones', '', '', '0000-00-00', '', ''),
+(37, 'PRUEBA 8 MILLONES', '', '', '0000-00-00', '', ''),
+(38, 'PRUEBA 9 MILLONES', '', '', '0000-00-00', '', '');
 
 -- --------------------------------------------------------
 
@@ -101,6 +109,20 @@ INSERT INTO `lista_indice` (`id_indice`, `nombre_indice`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `necesidades_viaje`
+--
+
+CREATE TABLE `necesidades_viaje` (
+  `id_necesidad_viaje` int(11) NOT NULL,
+  `id_viaje` int(11) NOT NULL,
+  `id_necesidad` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `necesidad_viaje` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `viajes`
 --
 
@@ -120,7 +142,13 @@ CREATE TABLE `viajes` (
 INSERT INTO `viajes` (`idviaje`, `id_usuario`, `nombre_viaje`, `fecha_inicio`, `fecha_fin`, `bote`) VALUES
 (1, 2, 'Mi Viaje a Torremolinos', '2020-11-04', '2020-11-12', 15),
 (2, 2, 'Benalmadena', '2020-11-20', '2020-11-21', 200),
-(3, 5, 'Viaje a Egipto', '2020-11-09', '2020-12-03', 5000);
+(3, 5, 'Viaje a Egipto', '2020-11-09', '2020-12-03', 5000),
+(8, 2, '', '0000-00-00', '0000-00-00', 0),
+(9, 2, '1231', '0000-00-00', '0000-00-00', 0),
+(10, 2, '231', '2020-11-27', '2020-11-17', 3132),
+(11, 2, '123', '2020-11-18', '2020-11-23', 2131),
+(12, 2, '1232134', '2020-11-16', '2020-11-17', 124),
+(13, 2, '23434', '2020-11-17', '2020-11-10', 2342);
 
 -- --------------------------------------------------------
 
@@ -141,7 +169,8 @@ CREATE TABLE `viajes_usuario` (
 -- Indices de la tabla `catalogo_necesidades`
 --
 ALTER TABLE `catalogo_necesidades`
-  ADD PRIMARY KEY (`id_necesidad`);
+  ADD PRIMARY KEY (`id_necesidad`),
+  ADD KEY `id_indice` (`id_indice`);
 
 --
 -- Indices de la tabla `datosusuario`
@@ -154,6 +183,15 @@ ALTER TABLE `datosusuario`
 --
 ALTER TABLE `lista_indice`
   ADD PRIMARY KEY (`id_indice`);
+
+--
+-- Indices de la tabla `necesidades_viaje`
+--
+ALTER TABLE `necesidades_viaje`
+  ADD PRIMARY KEY (`id_necesidad_viaje`),
+  ADD KEY `id_viaje` (`id_viaje`),
+  ADD KEY `id_necesidad` (`id_necesidad`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `viajes`
@@ -177,13 +215,13 @@ ALTER TABLE `viajes_usuario`
 -- AUTO_INCREMENT de la tabla `catalogo_necesidades`
 --
 ALTER TABLE `catalogo_necesidades`
-  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `datosusuario`
 --
 ALTER TABLE `datosusuario`
-  MODIFY `id_usuario` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_usuario` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `lista_indice`
@@ -192,14 +230,34 @@ ALTER TABLE `lista_indice`
   MODIFY `id_indice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT de la tabla `necesidades_viaje`
+--
+ALTER TABLE `necesidades_viaje`
+  MODIFY `id_necesidad_viaje` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `viajes`
 --
 ALTER TABLE `viajes`
-  MODIFY `idviaje` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idviaje` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `catalogo_necesidades`
+--
+ALTER TABLE `catalogo_necesidades`
+  ADD CONSTRAINT `catalogo_necesidades_ibfk_1` FOREIGN KEY (`id_indice`) REFERENCES `lista_indice` (`id_indice`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `necesidades_viaje`
+--
+ALTER TABLE `necesidades_viaje`
+  ADD CONSTRAINT `necesidades_viaje_ibfk_2` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`idviaje`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `necesidades_viaje_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `viajes` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `necesidades_viaje_ibfk_4` FOREIGN KEY (`id_necesidad`) REFERENCES `catalogo_necesidades` (`id_necesidad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `viajes`
