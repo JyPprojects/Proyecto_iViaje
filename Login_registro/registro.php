@@ -26,7 +26,7 @@
 
                 <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Usuario" name="usu">
+                <input type="text" placeholder="Usuario" name="usu" value=<?php echo ($_POST["usu"]); ?>>
                 </div> 
 
                 <div class="input-contenedor">
@@ -41,22 +41,22 @@
 
                 <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Nombre" name="nom">
+                <input type="text" placeholder="Nombre" name="nom" value=<?php echo ($_POST["nom"]); ?>>
                 </div> 
 
                 <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Apellidos" name="ape">
+                <input type="text" placeholder="Apellidos" name="ape" value=<?php echo ($_POST["ape"]); ?>>
                 </div> 
 
                 <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
-                <input type="text" placeholder="Correo" name="correo">
+                <input type="text" placeholder="Correo" name="correo" value=<?php echo ($_POST["correo"]); ?>>
                 </div> 
 
                 <div class="input-contenedor">
                 <i class="fas fa-calendar-alt icon"></i>
-                <input class="fecha" type="date" name="fecha">
+                <input class="fecha" type="date" name="fecha" value=<?php echo ($_POST["fecha"]); ?>>
                 </div> 
 
                 <input type="submit" value="Registrarse" class="button" name="enviar">
