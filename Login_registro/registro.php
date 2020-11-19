@@ -6,12 +6,35 @@
 	<title>iViaje | Registrate</title> 
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
-	<link rel="stylesheet" href="estilos/hola3.css">
-	
+    <link rel="stylesheet" href="estilos/hola3.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+        $( function() {
+            $( "#datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+            });
+        } );
+        </script>
 
+        <script>
+        $( function() {
+            $( document ).tooltip();
+        } );
+        </script>
+        <style>
+        label {
+            display: inline-block;
+            width: 5em;
+        }
+        </style>
 </head>  
 <body>
 <?php include("login_registro.php"); ?>
+<?php error_reporting(0); ?>
 
  <form class="formulario" method="post">
     
@@ -31,7 +54,7 @@
 
                 <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña" name="pass">
+                <input type="password" title="La contraseña contendra como mínimo letras y un número" placeholder="Contraseña (Mínimo letra y número)" name="pass">
                 </div> 
 
                 <div class="input-contenedor">
@@ -56,7 +79,7 @@
 
                 <div class="input-contenedor">
                 <i class="fas fa-calendar-alt icon"></i>
-                <input class="fecha" type="date" name="fecha" value=<?php echo ($_POST["fecha"]); ?>>
+                <input class="fecha" id="datepicker" placeholder="Fecha de Nacimiento" type="text" name="fecha" value=<?php echo ($_POST["fecha"]); ?>>
                 </div> 
 
                 <input type="submit" value="Registrarse" class="button" name="enviar">
