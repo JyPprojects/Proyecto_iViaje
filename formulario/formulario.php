@@ -41,6 +41,7 @@
                 <li><a href="#tabs-1">1º Paso - General</a></li>
                 <li><a href="#tabs-2">2º Paso - Transporte</a></li>
                 <li><a href="#tabs-3">3º Paso - Alojamiento</a></li>
+                <li><a href="#tabs-4">4º Paso - Sugerencias</a></li>
             </ul>
 
             <div id="tabs-1">
@@ -72,10 +73,6 @@
                                 <td class="cuadro"><input type="date" name="fecha_fin" required></td>
                             </tr>
 
-                            <tr>
-                                <td></td>
-                                <td><input type="submit" name="enviar" value="Enviar"></td>
-                            </tr>
                     </table>
 
                     <span class="flechas"><i class="fas fa-arrow-alt-circle-right"></i></span>
@@ -119,7 +116,6 @@
                                 </select>
                             </td>
                         </tr>
-                        <td><input type="submit" name="enviar" value="Enviar"></td>
                     </table>
 
                     <span class="flechas"><i class="fas fa-arrow-alt-circle-left"></i></span>
@@ -154,6 +150,31 @@
 
                     </table>
                     <span class="flechas"><i class="fas fa-arrow-alt-circle-left"></i></span> 
+                
+            </div>
+
+            <div id="tabs-4">
+
+                    <table>
+                        <tr class="input-contenedor">
+                            <td>
+                                <select name="elegir_sugerencia">
+                                    <option selected value="0"> Elige una opción </option>
+                                    <option value="1">Comida</option> 
+                                    <option value="2">Bebida</option> 
+                                    <option value="3">Utensilios</option>
+                                    <option value="4">General</option>
+                                </select>
+                            </td>
+                            <td>
+                                &nbsp;<input type="text" name="sugerencia">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br><br>
+
+                    <input type="submit" name="Enviar" value="Enviar">
                 </form>
             </div>
 
