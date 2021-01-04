@@ -11,7 +11,7 @@
 
     <script>
         $(document).ready(function(){
-            $("formulario").hide().fadeIn(2000);
+            $("body").hide().fadeIn(2000);
         });
     </script>
 </head>  
