@@ -7,8 +7,13 @@
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
 	<link rel="stylesheet" href="estilos/hola3.css">
-	
+	<script src="../librerias/jquery-3.5.1.js"></script>
 
+    <script>
+        $(document).ready(function(){
+            $("formulario").hide().fadeIn(2000);
+        });
+    </script>
 </head>  
 <body>
 <?php  include("login_registro.php"); ?>
