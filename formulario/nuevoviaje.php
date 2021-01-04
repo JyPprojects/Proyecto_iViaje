@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting();
 
 //INCLUDES
 include("../php/conexion.php");
@@ -30,35 +30,52 @@ $sugerencias_bebida=preg_split("/(\,)/", $_POST["bebida"]);
 $sugerencias_utensilios=preg_split("/(\,)/", $_POST["utensilios"]);
 $sugerencias_general=preg_split("/(\,)/", $_POST["general"]);
 
-//Generar URL
-echo "Esta es la dirección del viaje: "; echo "<br>";
-echo "<a href='../viaje_creado/viaje_creado.php'>Localhost:8080/Proyecto_iViaje/viaje_creado/viaje_creado.php/$_SESSION[id_viaje]</a>";
 
 
 
+if (!empty($nviaje && $fecha_ini && $fecha_fin && $bote)){
 
+    $viaje=select_query("idviaje", "viajes", "id_usuario", "$_SESSION[id_usuario]");
 
-//INSERT PASO 1
-$insertar_viaje="INSERT INTO viajes (id_usuario, nombre_viaje, fecha_inicio, fecha_fin, bote) VALUES ('$_SESSION[id_usuario]', '$nviaje', '$fecha_ini', '$fecha_fin', '$bote')";
-mysqli_query($conexion, $insertar_viaje);
+        if(empty($viaje)){
 
-$sql="SELECT idviaje FROM viajes WHERE id_usuario=$_SESSION[id_usuario]";
-$consulta_id_viaje=mysqli_query($conexion, $sql);
-    while ($id_viaje=mysqli_fetch_row($consulta_id_viaje)){
-        $array_id_viaje[]=$id_viaje[0];
-        
-    }
-$_SESSION["id_viaje"]=end($array_id_viaje); //Con esto tenemos en SESSION el ID VIAJE generado por la consulta anterior.
-    
-    
+            //INSERT PASO 1
+            $insertar_viaje="INSERT INTO viajes (id_usuario, nombre_viaje, fecha_inicio, fecha_fin, bote) VALUES ('$_SESSION[id_usuario]', '$nviaje', '$fecha_ini', '$fecha_fin', '$bote')";
+            mysqli_query($conexion, $insertar_viaje);
+
+            $sql="SELECT idviaje FROM viajes WHERE id_usuario=$_SESSION[id_usuario]";
+            $consulta_id_viaje=mysqli_query($conexion, $sql);
+                while ($id_viaje=mysqli_fetch_row($consulta_id_viaje)){
+                    $array_id_viaje[]=$id_viaje[0];
+                    
+                }
+            $_SESSION["id_viaje"]=end($array_id_viaje); //Con esto tenemos en SESSION el ID VIAJE generado por la consulta anterior.
+
+            //Generar URL
+            echo "Esta es la dirección del viaje: "; echo "<br>";
+            echo "<a href='../viaje_creado/viaje.php'>Localhost:8080/Proyecto_iViaje/viaje_creado/viaje_creado.php/$_SESSION[id_viaje]</a>";
+        }
+
+        else{
+            echo "Lo siento, ya has creado un viaje";
+            echo "<br>";
+            $id_viaje_creado=select_query("idviaje", "viajes", "id_usuario", "$_SESSION[id_usuario]");
+            echo "Tu viaje es: "; 
+            echo "<br>";
+            echo "<a href='../viaje_creado/viaje.php'>Localhost:8080/Proyecto_iViaje/viaje_creado/viaje_creado.php/$id_viaje_creado[0]</a>";
+        }
+}    
 
 //INSERT PASO 2
-
 
 //INSERT PASO 3
 
 //INSERT PASO 4
+else{
+    echo "Debes rellenar todos los campos";
+}
 
 
 }
 ?> 
+<br>
