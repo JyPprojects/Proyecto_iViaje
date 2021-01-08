@@ -3,28 +3,29 @@
 //ERRORES
 $error="";
 $registro="";
-error_reporting();
+error_reporting(0);
 
 //INCLUDES
 include("../php/conexion.php");
+include("../php/funciones.php");
 
 //LOGIN 
-
 if (isset($_POST["login"])){
-    global $usuario1;
+    
     $usuario1=mysqli_real_escape_string($conexion, $_POST["usu"]);
     $contraseña1=mysqli_real_escape_string($conexion, $_POST["pass"]);
     
         if($usuario1 !='' && $contraseña1 !=''){
     
-             $consulta1="SELECT contraseña FROM datosusuario WHERE usuario='$usuario1'";
-             $resultado1=mysqli_query($conexion, $consulta1);
+
+             $contraseñabd=select_query("contraseña", "datosusuario", "usuario", $usuario1);
+
              $consultaid1="SELECT id_usuario FROM datosusuario WHERE usuario='$usuario1'";
              $resultadoid1=mysqli_query($conexion, $consultaid1);
              $id_usuario=mysqli_fetch_row($resultadoid1);
-             $login=mysqli_fetch_row($resultado1);
+             
     
-                if($resultado1->num_rows == 1 && password_verify($contraseña1, $login[0])){
+                if(!empty($contraseñabd) && password_verify($contraseña1, $contraseñabd[0])){
     
                     session_start();
                     $_SESSION["usuario"]=$_POST["usu"];
@@ -37,32 +38,21 @@ if (isset($_POST["login"])){
                         }
                         else{
                             header("Location: ../Index.php");
-    
-                        }  
-                                                
+                        }                                                 
                 }
-                else{
-    
-                    $error="Usuario o contraseña incorrecto";
-                        
+                else{   
+                    $error="Usuario o contraseña incorrecto";                        
                 }
     
-}
-else{
-    
-    $error="No puedes dejar campos vacíos";
-}
+        }
+        else{
+            
+            $error="No puedes dejar campos vacíos";
+        }
     
 }
 
 //REGISTRO
-
-/* elseif(isset($_POST["registro"])){
-
-/* header(HACIA LA MISMA PÁGINA PERO CON EL FORMULARIO DE REGISTRO CARGADO) 
- }
-*/
-
 if(isset($_POST["enviar"])){
 
         $usuario1=mysqli_real_escape_string($conexion, $_POST["usu"]);
