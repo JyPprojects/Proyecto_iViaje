@@ -50,31 +50,31 @@
                         
                             <tr class="input-contenedor">
                                 <td><p>Nombre Viaje: &nbsp;</p></td>
-                                <td class="cuadro"><input type="text" name="nviaje" required></td>
+                                <td class="cuadro"><input type="text" name="nviaje" ></td>
                             </tr>
 
                             <tr class="input-contenedor">
                                 <td><p>Pais: &nbsp;</p></td>
-                                <td class="cuadro"><input type="text" name="pais" required></td>
+                                <td class="cuadro"><input type="text" name="pais" ></td>
                             </tr>
 
                             <tr class="input-contenedor">
                                 <td><p>Bote: &nbsp;</p></td>
-                                <td class="cuadro"><input type="number" name="bote" required></td>
+                                <td class="cuadro"><input type="number" name="bote" ></td>
                             </tr>
 
                             <tr class="input-contenedor">
                                 <td><p>Fecha Inicio Viaje: &nbsp;</p></td>
-                                <td class="cuadro"><input type="date" name="fecha_ini" required></td>
+                                <td class="cuadro"><input type="date" name="fecha_ini" ></td>
                             </tr>
 
                             <tr class="input-contenedor">
                                 <td><p>Fecha Final Viaje: &nbsp;</p></td>
-                                <td class="cuadro"><input type="date" name="fecha_fin" required></td>
+                                <td class="cuadro"><input type="date" name="fecha_fin" ></td>
                             </tr>
 
                     </table>
-
+                    <input type="submit" value="Enviar" name="enviar">
                     <span class="flechas"><i class="fas fa-arrow-alt-circle-right"></i></span>
 
             </div>
@@ -86,7 +86,7 @@
                         <tr class="input-contenedor">
                             <td><p>Medio de transporte: &nbsp;</p></td>
                             <td class="cuadro">
-                                <select name="transporte" required>
+                                <select name="transporte" >
                                     <option selected value="0"> Elige una opción </option>
                                     <option value="1">Coche</option> 
                                     <option value="2">Avión</option> 
@@ -101,7 +101,7 @@
 
                         <tr class="input-contenedor">
                             <td><p>Cantidad de Coches: &nbsp;</p></td>
-                            <td class="cuadro"><input type="number" name="cantidad_coche" required></td>
+                            <td class="cuadro"><input type="number" name="cantidad_coche" ></td>
                         </tr>
 
                         <tr class="input-contenedor">
@@ -140,12 +140,12 @@
 
                         <tr class="input-contenedor">
                             <td><p>Dirección de la Estancia: &nbsp;</p></td>
-                            <td class="cuadro"><input type="text" name="d_estancia" required></td>
+                            <td class="cuadro"><input type="text" name="d_estancia" ></td>
                         </tr>
 
                         <tr class="input-contenedor">
                             <td><p>Tlfn Estancia: &nbsp;</p></td>
-                            <td class="cuadro"><input type="number" name="tlfn_estancia" required></td>
+                            <td class="cuadro"><input type="number" name="tlfn_estancia" ></td>
                         </tr>
 
                     </table>
@@ -158,23 +158,30 @@
                     <table>
                         <tr class="input-contenedor">
                             <td>
-                                <select name="elegir_sugerencia">
-                                    <option selected value="0"> Elige una opción </option>
+                                Comida: <textarea name="comida" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
+                                Bebida: <textarea name="bebida" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma" ></textarea>
+                                Utensilions: <textarea name="utensilios" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
+                                General: <textarea name="general" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
+                                <!--<
+                                    <select name="elegir_sugerencia">
+                                    option selected value="0"> Elige una opción </option>
                                     <option value="1">Comida</option> 
                                     <option value="2">Bebida</option> 
                                     <option value="3">Utensilios</option>
                                     <option value="4">General</option>
                                 </select>
+                                &nbsp;<input type="text" name="sugerencia">
+                                -->
                             </td>
                             <td>
-                                &nbsp;<input type="text" name="sugerencia">
+                                
                             </td>
                         </tr>
                     </table>
 
                     <br><br>
 
-                    <input type="submit" name="Enviar" value="Enviar">
+                    <input type="submit" name="enviar" value="Enviar">
                 </form>
             </div>
 
