@@ -9,8 +9,12 @@ include("viaje_creado.php");
 <br><hr>
 
 <h2>Necesidades</h2>
+    <h3>Comida</h3>
 <table>
-    <tr></tr>
+    <tr>
+        <th>Comida</th>
+        <th>Usuario</th>
+    </tr>
 
 
 
@@ -32,3 +36,18 @@ include("viaje_creado.php");
 
 
 </table>
+
+<br><hr>
+
+<h2>Alojamiento</h2>
+<table>
+    <tr></tr>
+
+
+
+
+
+
+</table>
+
+<h2></h2>
