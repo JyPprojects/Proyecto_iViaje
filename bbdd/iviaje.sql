@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2020 a las 00:40:37
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.6
+-- Tiempo de generación: 25-01-2021 a las 20:09:41
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `iviaje`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alojamiento`
+--
+
+CREATE TABLE `alojamiento` (
+  `id_alojamiento` int(11) NOT NULL,
+  `tipo_alojamiento` varchar(25) NOT NULL,
+  `direccion_alojamiento` int(11) NOT NULL,
+  `tlfn_estancia` int(10) DEFAULT NULL,
+  `id_viaje` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -46,7 +60,7 @@ INSERT INTO `catalogo_necesidades` (`id_necesidad`, `id_indice`, `nombre_necesid
 (6, 3, 'Ubicación'),
 (7, 3, 'Tipo_estancia'),
 (8, 3, 'Direccion'),
-(9, 3, 'telefono');
+(9, 3, 'Telefono');
 
 -- --------------------------------------------------------
 
@@ -82,7 +96,9 @@ INSERT INTO `datosusuario` (`id_usuario`, `usuario`, `contraseña`, `correo`, `f
 (35, 'prueba 6 millones', '', '', '0000-00-00', '', ''),
 (36, 'prueba 7 millones', '', '', '0000-00-00', '', ''),
 (37, 'PRUEBA 8 MILLONES', '', '', '0000-00-00', '', ''),
-(38, 'PRUEBA 9 MILLONES', '', '', '0000-00-00', '', '');
+(38, 'PRUEBA 9 MILLONES', '', '', '0000-00-00', '', ''),
+(39, 'Prueba42', '$2y$10$EVKvYJImTVpt6H55YZbALelhyKGveXGF32ATCySGKkfqz5iUvLYEq', 'prueba1@gmail.com', '0000-00-00', 'Alberto', 'prueba1'),
+(40, 'espartaco', '$2y$10$CAOI9Nk8kXuIMAah3iq..OGAOEI962STH6.lKBjbq8mK7wNgVFWZS', 'sffg@gmail.com', '0000-00-00', 'espar', 'taco');
 
 -- --------------------------------------------------------
 
@@ -123,6 +139,40 @@ CREATE TABLE `necesidades_viaje` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `prueba`
+--
+
+CREATE TABLE `prueba` (
+  `comida` varchar(25) NOT NULL,
+  `usuarios` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `prueba`
+--
+
+INSERT INTO `prueba` (`comida`, `usuarios`) VALUES
+('aguacates', 'pablo'),
+('hamburguesas', 'juanan'),
+('pan_hamburguesa', 'sevi');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `transporte`
+--
+
+CREATE TABLE `transporte` (
+  `id_transporte` int(11) NOT NULL,
+  `tipo_transporte` varchar(25) NOT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  `combustible` varchar(25) DEFAULT NULL,
+  `id_viaje` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `viajes`
 --
 
@@ -140,15 +190,10 @@ CREATE TABLE `viajes` (
 --
 
 INSERT INTO `viajes` (`idviaje`, `id_usuario`, `nombre_viaje`, `fecha_inicio`, `fecha_fin`, `bote`) VALUES
-(1, 2, 'Mi Viaje a Torremolinos', '2020-11-04', '2020-11-12', 15),
-(2, 2, 'Benalmadena', '2020-11-20', '2020-11-21', 200),
-(3, 5, 'Viaje a Egipto', '2020-11-09', '2020-12-03', 5000),
-(8, 2, '', '0000-00-00', '0000-00-00', 0),
-(9, 2, '1231', '0000-00-00', '0000-00-00', 0),
-(10, 2, '231', '2020-11-27', '2020-11-17', 3132),
-(11, 2, '123', '2020-11-18', '2020-11-23', 2131),
-(12, 2, '1232134', '2020-11-16', '2020-11-17', 124),
-(13, 2, '23434', '2020-11-17', '2020-11-10', 2342);
+(149, 2, 'Torrey34444', '0000-00-00', '0000-00-00', 0),
+(150, 8, 'Tengoqueborraresto', '0000-00-00', '0000-00-00', 0),
+(152, 40, 'Manuela565665735', '2020-12-01', '2020-12-09', 800),
+(156, 9, 'Holabuenas4', '2021-01-20', '2021-01-15', 7568678);
 
 -- --------------------------------------------------------
 
@@ -164,6 +209,13 @@ CREATE TABLE `viajes_usuario` (
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `alojamiento`
+--
+ALTER TABLE `alojamiento`
+  ADD PRIMARY KEY (`id_alojamiento`),
+  ADD KEY `id_viaje` (`id_viaje`);
 
 --
 -- Indices de la tabla `catalogo_necesidades`
@@ -194,6 +246,19 @@ ALTER TABLE `necesidades_viaje`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
+-- Indices de la tabla `prueba`
+--
+ALTER TABLE `prueba`
+  ADD PRIMARY KEY (`comida`);
+
+--
+-- Indices de la tabla `transporte`
+--
+ALTER TABLE `transporte`
+  ADD PRIMARY KEY (`id_transporte`),
+  ADD KEY `id_viaje` (`id_viaje`);
+
+--
 -- Indices de la tabla `viajes`
 --
 ALTER TABLE `viajes`
@@ -212,6 +277,12 @@ ALTER TABLE `viajes_usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `alojamiento`
+--
+ALTER TABLE `alojamiento`
+  MODIFY `id_alojamiento` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `catalogo_necesidades`
 --
 ALTER TABLE `catalogo_necesidades`
@@ -221,7 +292,7 @@ ALTER TABLE `catalogo_necesidades`
 -- AUTO_INCREMENT de la tabla `datosusuario`
 --
 ALTER TABLE `datosusuario`
-  MODIFY `id_usuario` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_usuario` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `lista_indice`
@@ -233,17 +304,29 @@ ALTER TABLE `lista_indice`
 -- AUTO_INCREMENT de la tabla `necesidades_viaje`
 --
 ALTER TABLE `necesidades_viaje`
-  MODIFY `id_necesidad_viaje` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_necesidad_viaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `transporte`
+--
+ALTER TABLE `transporte`
+  MODIFY `id_transporte` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `viajes`
 --
 ALTER TABLE `viajes`
-  MODIFY `idviaje` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idviaje` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `alojamiento`
+--
+ALTER TABLE `alojamiento`
+  ADD CONSTRAINT `alojamiento_ibfk_1` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`idviaje`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `catalogo_necesidades`
@@ -256,8 +339,14 @@ ALTER TABLE `catalogo_necesidades`
 --
 ALTER TABLE `necesidades_viaje`
   ADD CONSTRAINT `necesidades_viaje_ibfk_2` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`idviaje`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `necesidades_viaje_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `viajes` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `necesidades_viaje_ibfk_4` FOREIGN KEY (`id_necesidad`) REFERENCES `catalogo_necesidades` (`id_necesidad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `necesidades_viaje_ibfk_4` FOREIGN KEY (`id_necesidad`) REFERENCES `catalogo_necesidades` (`id_necesidad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `necesidades_viaje_ibfk_5` FOREIGN KEY (`id_usuario`) REFERENCES `datosusuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `transporte`
+--
+ALTER TABLE `transporte`
+  ADD CONSTRAINT `transporte_ibfk_1` FOREIGN KEY (`id_viaje`) REFERENCES `viajes` (`idviaje`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `viajes`
