@@ -88,13 +88,13 @@
                             <td class="cuadro">
                                 <select name="transporte" >
                                     <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Coche</option> 
-                                    <option value="2">Avión</option> 
-                                    <option value="3">Caravana</option>
-                                    <option value="4">Ave</option>
-                                    <option value="5">Tren</option>
-                                    <option value="6">Barco</option>
-                                    <option value="7">Autobus</option>
+                                    <option value="Coche">Coche</option> 
+                                    <option value="Avión">Avión</option> 
+                                    <option value="Caravana">Caravana</option>
+                                    <option value="Ave">Ave</option>
+                                    <option value="Tren">Tren</option>
+                                    <option value="Barco">Barco</option>
+                                    <option value="Autobus">Autobus</option>
                                 </select>
                             </td>
                         </tr>
@@ -109,10 +109,10 @@
                             <td class="cuadro">
                                 <select name="combustible">
                                     <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Diesel</option> 
-                                    <option value="2">Gasolina</option> 
-                                    <option value="3">Hibrido</option>
-                                    <option value="4">Electrico</option>
+                                    <option value="Diesel">Diesel</option> 
+                                    <option value="Gasolina">Gasolina</option> 
+                                    <option value="Hibrido">Hibrido</option>
+                                    <option value="Electrico">Electrico</option>
                                 </select>
                             </td>
                         </tr>
@@ -131,9 +131,9 @@
                             <td class="cuadro">
                                 <select name="estancia">
                                     <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Hotel</option> 
-                                    <option value="2">Casa Rural</option> 
-                                    <option value="3">Caravana</option>
+                                    <option value="Hotel">Hotel</option> 
+                                    <option value="Casa Rural">Casa Rural</option> 
+                                    <option value="Caravana">Caravana</option>
                                 </select>
                             </td>
                         </tr>

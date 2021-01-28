@@ -68,7 +68,19 @@ if (!empty($nviaje && $fecha_ini && $fecha_fin && $bote)){
 
 //INSERT PASO 2
 
+if (!empty($transporte && $cantidad_coches && $combustible)){
+
+            $insertar_viaje="INSERT INTO transporte (tipo_transporte, cantidad, combustible, id_viaje) VALUES ('$transporte', '$cantidad_coches', '$combustible', '$_SESSION[id_viaje]')";
+            mysqli_query($conexion, $insertar_viaje);
+}
+
 //INSERT PASO 3
+
+if (!empty($estancia && $direccion_estancia && $telefono_estancia)){
+
+    $insertar_viaje="INSERT INTO alojamiento (tipo_alojamiento, direccion_alojamiento, tlfn_estancia, id_viaje) VALUES ('$estancia', '$direccion_estancia', '$telefono_estancia', '$_SESSION[id_viaje]')";
+    mysqli_query($conexion, $insertar_viaje);
+}
 
 //INSERT PASO 4
 else{
