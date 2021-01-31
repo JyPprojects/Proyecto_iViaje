@@ -41,7 +41,7 @@
                 <li><a href="#tabs-1">1º Paso - General</a></li>
                 <li><a href="#tabs-2">2º Paso - Transporte</a></li>
                 <li><a href="#tabs-3">3º Paso - Alojamiento</a></li>
-                <li><a href="#tabs-4">4º Paso - Sugerencias</a></li>
+                <li><a href="#tabs-4">4º Paso - Añade algo a tu Viaje</a></li>
             </ul>
 
             <div id="tabs-1">

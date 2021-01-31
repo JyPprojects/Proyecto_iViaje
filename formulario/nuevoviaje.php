@@ -25,10 +25,10 @@ $direccion_estancia=$_POST["d_estancia"];
 $telefono_estancia=$_POST["tlfn_estancia"];
 
 //PASO 4
-$sugerencias_comida=preg_split("/(\,)/", $_POST["comida"]);
-$sugerencias_bebida=preg_split("/(\,)/", $_POST["bebida"]);
-$sugerencias_utensilios=preg_split("/(\,)/", $_POST["utensilios"]);
-$sugerencias_general=preg_split("/(\,)/", $_POST["general"]);
+$comida=preg_split("/(\,)/", $_POST["comida"]);
+$bebida=preg_split("/(\,)/", $_POST["bebida"]);
+$utensilios=preg_split("/(\,)/", $_POST["utensilios"]);
+$general=preg_split("/(\,)/", $_POST["general"]);
 
 
 
@@ -83,6 +83,13 @@ if (!empty($estancia && $direccion_estancia && $telefono_estancia)){
 }
 
 //INSERT PASO 4
+
+if (!empty($comida)){
+    foreach ($comida as $valor) {
+        $insertar_viaje="INSERT INTO necesidades_viaje (id_viaje, id_necesidad, id_usuario, necesidad_viaje) VALUES ('$_SESSION[id_viaje]', '1', '$_SESSION[id_usuario]', '$valor')";
+        mysqli_query($conexion, $insertar_viaje);
+    }
+}
 else{
     echo "Debes rellenar todos los campos";
 }

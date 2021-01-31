@@ -10,13 +10,9 @@ include("viaje_creado.php");
 
 <h2>Necesidades</h2>
     <h3>Comida</h3>
-<table>
-    <tr>
-        <th>Comida</th>
-        <th>Usuario</th>
-    </tr>
-
-</table>
+    <?php  
+        print_r($info_comida);
+    ?>
 
 <br><hr>
 
