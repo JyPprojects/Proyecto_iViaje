@@ -60,6 +60,7 @@ if (!empty($nviaje && $fecha_ini && $fecha_fin && $bote)){
             echo "Lo siento, ya has creado un viaje";
             echo "<br>";
             $id_viaje_creado=select_query("idviaje", "viajes", "id_usuario", "$_SESSION[id_usuario]");
+            $_SESSION["id_viaje"]=$id_viaje_creado[0];
             echo "Tu viaje es: "; 
             echo "<br>";
             echo "<a href='../viaje_creado/viaje.php'>Localhost:8080/Proyecto_iViaje/viaje_creado/viaje_creado.php/$id_viaje_creado[0]</a>";
