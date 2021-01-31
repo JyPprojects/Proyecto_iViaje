@@ -28,6 +28,9 @@ if (isset($_POST["login"])){
                 if(!empty($contraseñabd) && password_verify($contraseña1, $contraseñabd[0])){
     
                     session_start();
+                    if(!empty($id_viaje)){
+                        $_SESSION["id_viaje"]=$id_viaje;
+                    }
                     $_SESSION["usuario"]=$_POST["usu"];
                     $_SESSION["id_usuario"]=$id_usuario[0];
                         if(isset($_POST["cookie"])){
