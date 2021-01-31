@@ -14,6 +14,21 @@ include("viaje_creado.php");
         print_r($info_comida);
     ?>
 
+<h3>Bebida</h3>
+    <?php  
+        print_r($info_bebida);
+    ?>
+
+<h3>Utensilios</h3>
+    <?php  
+        print_r($info_utensilios);
+    ?>
+
+<h3>General</h3>
+    <?php  
+        print_r($info_general);
+    ?>
+
 <br><hr>
 
 <h2>Transporte</h2>

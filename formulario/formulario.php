@@ -160,7 +160,7 @@
                             <td>
                                 Comida: <textarea name="comida" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
                                 Bebida: <textarea name="bebida" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma" ></textarea>
-                                Utensilions: <textarea name="utensilios" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
+                                Utensilios: <textarea name="utensilios" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
                                 General: <textarea name="general" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
                                 <!--<
                                     <select name="elegir_sugerencia">

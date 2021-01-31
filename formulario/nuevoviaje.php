@@ -90,6 +90,32 @@ if (!empty($comida)){
         mysqli_query($conexion, $insertar_viaje);
     }
 }
+
+if (!empty($bebida)){
+    foreach ($bebida as $valor) {
+        $insertar_viaje="INSERT INTO necesidades_viaje (id_viaje, id_necesidad, id_usuario, necesidad_viaje) VALUES ('$_SESSION[id_viaje]', '2', '$_SESSION[id_usuario]', '$valor')";
+        mysqli_query($conexion, $insertar_viaje);
+    }
+}
+
+if (!empty($utensilios)){
+    foreach ($utensilios as $valor) {
+        $insertar_viaje="INSERT INTO necesidades_viaje (id_viaje, id_necesidad, id_usuario, necesidad_viaje) VALUES ('$_SESSION[id_viaje]', '3', '$_SESSION[id_usuario]', '$valor')";
+        mysqli_query($conexion, $insertar_viaje);
+    }
+}
+
+if (!empty($general)){
+    foreach ($general as $valor) {
+        $insertar_viaje="INSERT INTO necesidades_viaje (id_viaje, id_necesidad, id_usuario, necesidad_viaje) VALUES ('$_SESSION[id_viaje]', '4', '$_SESSION[id_usuario]', '$valor')";
+        mysqli_query($conexion, $insertar_viaje);
+    }
+}
+
+
+
+
+
 else{
     echo "Debes rellenar todos los campos";
 }
