@@ -12,7 +12,7 @@ else{
 if (isset($_GET["exit"])){
 
     session_destroy();
-    header("Location: login_registro/index.php");
+    header("Location: ../login_registro/index.php");
     
 }
 else{    
