@@ -28,8 +28,11 @@
                         $("#p_"+id3).show(); 
                         
 
-                        var enlace="update.php?input="+input+"&id_oculto="+id_oculto+" ";
-                        $("#resultado").load(enlace);
+                        var enlace="update.php?input="+input+"&id_oculto="+id_oculto+"";
+                        var enlace2= enlace.replace(/ /g, "_");
+                        $("#resultado").load(enlace2);
+
+
                     });                                                        
                 }       
         });
@@ -53,8 +56,9 @@
                 $("#input_nuevo"+i).hide();
                 $("#p_nuevo"+i).show();
                 
-                var enlace=`insert_comida.php?input_nuevo=${i_nuevo}&id_viaje=${id_viaje}&usuario_nuevo=${id_usuario}`;
-                $("#resultado").load(enlace);
+                var enlace="insert_comida.php?input_nuevo="+i_nuevo+"&id_viaje="+id_viaje+"&usuario_nuevo="+id_usuario+"";
+                var enlace2= enlace.replace(/ /g, "_");
+                $("#resultado").load(enlace2);
             });         
         });
     }); 
