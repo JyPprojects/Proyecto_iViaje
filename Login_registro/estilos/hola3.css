@@ -106,7 +106,8 @@ p{
     .formulario{
         margin: auto;
         width: 1000px;
-        margin-top: 150px;
+        margin-top: 25px;
+        margin-bottom: 25px;
         border-radius: 2%;
     }
 }
