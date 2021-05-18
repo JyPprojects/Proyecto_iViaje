@@ -4,7 +4,7 @@ $error="";
 
 //INCLUDES
 include("php/conexion.php");
-
+echo $_SESSION["id_viaje"];
 //CÓDIGO
 $consulta1="SELECT idviaje FROM viajes WHERE id_usuario='$_SESSION[id_usuario]'";
 $resultado1=mysqli_query($conexion, $consulta1);
@@ -22,7 +22,7 @@ $eleccion=mysqli_fetch_row($resultado1);
     else{
 ?>
         <article class="sidebar2">
-        <a href=""><img src="menu_post-login/Imagenes/caravana1.png" alt="Error al cargar">
+        <a href="viaje_creado/viaje.php"><img src="menu_post-login/Imagenes/caravana1.png" alt="Error al cargar">
         <h2>Tu Viaje</h2></a>
         </article>
 <?php

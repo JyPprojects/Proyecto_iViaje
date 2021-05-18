@@ -14,7 +14,7 @@ if (isset($_POST["login"])){
     
     $usuario1=mysqli_real_escape_string($conexion, $_POST["usu"]);
     $contraseña1=mysqli_real_escape_string($conexion, $_POST["pass"]);
-    
+    $id_viaje=select_query("idviaje", "viajes", "id_usuario", "$_SESSION[id_usuario]");
         if($usuario1 !='' && $contraseña1 !=''){
     
 
@@ -28,11 +28,14 @@ if (isset($_POST["login"])){
                 if(!empty($contraseñabd) && password_verify($contraseña1, $contraseñabd[0])){
     
                     session_start();
-                    if(!empty($id_viaje)){
-                        $_SESSION["id_viaje"]=$id_viaje;
-                    }
                     $_SESSION["usuario"]=$_POST["usu"];
                     $_SESSION["id_usuario"]=$id_usuario[0];
+                    $id_viaje=select_query("idviaje", "viajes", "id_usuario", "$_SESSION[id_usuario]");
+                    if(!empty($id_viaje)){
+                        
+                        $_SESSION["id_viaje"]=$id_viaje[0];
+                    }
+
                         if(isset($_POST["cookie"])){
                             setcookie("cookie1", $_POST["usu"],time()+604800);
                             header("Location: ../Index.php");
