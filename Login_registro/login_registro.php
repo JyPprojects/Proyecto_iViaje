@@ -68,7 +68,9 @@ if(isset($_POST["enviar"])){
         $correo1=mysqli_real_escape_string($conexion, $_POST["correo"]);
         $nombre1=mysqli_real_escape_string($conexion, $_POST["nom"]);
         $apellidos1=mysqli_real_escape_string($conexion, $_POST["ape"]);
-        $fecha_naci1=mysqli_real_escape_string($conexion, $_POST["fecha"]);
+        $fecha_naci=mysqli_real_escape_string($conexion, $_POST["fecha"]);
+
+        $fecha_naci1 = date("Y-m-d", strtotime($fecha_naci));
 
 
             if($usuario1 !='' && $contraseña1 !='' && $correo1 !='' && $nombre1 !='' && $apellidos1 !='' && $fecha_naci1 !=''){
