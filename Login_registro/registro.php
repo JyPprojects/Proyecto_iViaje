@@ -5,32 +5,43 @@
     <link rel="icon" href="Imagenes/Favicon2.ico">
 	<title>iViaje | Registrate</title> 
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
     <link rel="stylesheet" href="estilos/hola3.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script>
-        $( function() {
-            $( "#datepicker" ).datepicker({
-            changeMonth: true,
-            changeYear: true
-            });
-        } );
-        </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <script src="jquery.ui.datepicker-es.js"></script>
 
-        <script>
-        $( function() {
-            $( document ).tooltip();
-        } );
-        </script>
-        <style>
-        label {
-            display: inline-block;
-            width: 5em;
-        }
-        </style>
+    <script>
+        $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '< Ant',
+        nextText: 'Sig >',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd-mm-yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+
+        $(function () {
+        $.datepicker.setDefaults($.datepicker.regional["es"]);
+        $("#fecha").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2030"
+        });
+        });
+    </script>
+
 </head>  
 <body>
 <?php include("login_registro.php"); ?>
@@ -79,7 +90,7 @@
 
                 <div class="input-contenedor">
                 <i class="fas fa-calendar-alt icon"></i>
-                <input class="fecha" id="datepicker" placeholder="Fecha de Nacimiento" type="text" name="fecha" value=<?php echo ($_POST["fecha"]); ?>>
+                <input class="fecha" id="fecha" placeholder="Fecha de Nacimiento" type="text" name="fecha" value=<?php echo ($_POST["fecha"]); ?>>
                 </div> 
 
                 <input type="submit" value="Registrarse" class="button" name="enviar">
