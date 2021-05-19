@@ -13,7 +13,7 @@ include("viaje_creado.php");
     <script src="../librerias/jquery-3.5.1.js"></script>
     <script src="comida.js"></script>
     <script src="bebida.js"></script>
-    <title><?php echo $info_viaje[2];?></title>
+    <title><?php echo ucfirst($_SESSION["usuario"]); ?> | <?php echo $info_viaje[2];?></title>
 
 </head>
 <body>
@@ -30,17 +30,6 @@ include("viaje_creado.php");
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -64,7 +53,7 @@ include("viaje_creado.php");
 </nav>
 
 <div>
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Info Viaje</button>
   </li>
