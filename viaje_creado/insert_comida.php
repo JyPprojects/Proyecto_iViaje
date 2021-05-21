@@ -2,8 +2,8 @@
 include("../php/conexion.php");
 include("../php/funciones.php");
 
-$resultado = select_query("necesidad_viaje", "necesidades_viajes", "necesidad_viaje", "$_GET[input_nuevo]");
-echo $resultado[0];
+// $resultado = select_query("necesidad_viaje", "necesidades_viajes", "necesidad_viaje", "$_GET[input_nuevo]");
+// echo $resultado[0];
 
 
 if (!empty($_GET["input_nuevo"])){
