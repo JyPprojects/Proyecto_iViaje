@@ -13,19 +13,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style type="text/css">
+        #regiration_form fieldset:not(:first-of-type) {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+        var current = 1,current_step,next_step,steps;
+        steps = $("fieldset").length;
+        $(".next").click(function(){
+        current_step = $(this).parent();
+        next_step = $(this).parent().next();
+        next_step.show();
+        current_step.hide();
+        setProgressBar(++current);
+        });
+        $(".previous").click(function(){
+        current_step = $(this).parent();
+        next_step = $(this).parent().prev();
+        next_step.show();
+        current_step.hide();
+        setProgressBar(--current);
+        });
+        setProgressBar(current);
+        // Change progress bar action
+        function setProgressBar(curStep){
+        var percent = parseFloat(100 / steps) * curStep;
+        percent = percent.toFixed();
+        $(".progress-bar")
+        .css("width",percent+"%")
+        .html(percent+"%");
+        }
+        });
+    </script>
     <script>
         $( function() {
             $( "#tabs" ).tabs();
         } );
     </script>
-    <title>iViaje | Crea tu viaje</title>
+    <title>MAKE AND TRAVEL | Crea tu viaje</title>
 </head>
 <body>
 <?php include("nuevoviaje.php"); ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../Index.php">iViaje</a>
+    <a class="navbar-brand" href="../Index.php">MAKE AND TRAVEL</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -58,174 +92,125 @@
   </div>
 </nav>
 
-    <section id="contenido">
-
-        <div id="tabs">
-            <ul>
-                <li><a href="#tabs-1">1º Paso - General</a></li>
-                <li><a href="#tabs-2">2º Paso - Transporte</a></li>
-                <li><a href="#tabs-3">3º Paso - Alojamiento</a></li>
-                <li><a href="#tabs-4">4º Paso - Añade algo a tu Viaje</a></li>
-            </ul>
-
-            <div id="tabs-1">
-                <form method="post">
-                    <table id="paso1">
-                        
-                            <tr class="input-contenedor">
-                                <td><p>Nombre Viaje: &nbsp;</p></td>
-                                <td class="cuadro"><input type="text" name="nviaje" ></td>
-                            </tr>
-
-                            <tr class="input-contenedor">
-                                <td><p>Pais: &nbsp;</p></td>
-                                <td class="cuadro"><input type="text" name="pais" ></td>
-                            </tr>
-
-                            <tr class="input-contenedor">
-                                <td><p>Bote: &nbsp;</p></td>
-                                <td class="cuadro"><input type="number" name="bote" ></td>
-                            </tr>
-
-                            <tr class="input-contenedor">
-                                <td><p>Fecha Inicio Viaje: &nbsp;</p></td>
-                                <td class="cuadro"><input type="date" name="fecha_ini" ></td>
-                            </tr>
-
-                            <tr class="input-contenedor">
-                                <td><p>Fecha Final Viaje: &nbsp;</p></td>
-                                <td class="cuadro"><input type="date" name="fecha_fin" ></td>
-                            </tr>
-
-                    </table>
-                    <input type="submit" value="Enviar" name="enviar">
-                    <span class="flechas"><i class="fas fa-arrow-alt-circle-right"></i></span>
-
-            </div>
-
-            <div id="tabs-2">
-
-                    <table id="paso1">
-
-                        <tr class="input-contenedor">
-                            <td><p>Medio de transporte: &nbsp;</p></td>
-                            <td class="cuadro">
-                                <select name="transporte" >
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="Coche">Coche</option> 
-                                    <option value="Avión">Avión</option> 
-                                    <option value="Caravana">Caravana</option>
-                                    <option value="Ave">Ave</option>
-                                    <option value="Tren">Tren</option>
-                                    <option value="Barco">Barco</option>
-                                    <option value="Autobus">Autobus</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                        <tr class="input-contenedor">
-                            <td><p>Cantidad de Coches: &nbsp;</p></td>
-                            <td class="cuadro"><input type="number" name="cantidad_coche" ></td>
-                        </tr>
-
-                        <tr class="input-contenedor">
-                            <td><p>Combustible: &nbsp;</p></td>
-                            <td class="cuadro">
-                                <select name="combustible">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="Diesel">Diesel</option> 
-                                    <option value="Gasolina">Gasolina</option> 
-                                    <option value="Hibrido">Hibrido</option>
-                                    <option value="Electrico">Electrico</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <span class="flechas"><i class="fas fa-arrow-alt-circle-left"></i></span>
-                    <span class="flechas"><i class="fas fa-arrow-alt-circle-right"></i></span>
-                        
-            </div>
-
-            <div id="tabs-3">
-                    <table id="paso1">
-
-                        <tr class="input-contenedor">
-                            <td><p>Tipo de Estancia: &nbsp;</p></td>
-                            <td class="cuadro">
-                                <select name="estancia">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="Hotel">Hotel</option> 
-                                    <option value="Casa Rural">Casa Rural</option> 
-                                    <option value="Caravana">Caravana</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                        <tr class="input-contenedor">
-                            <td><p>Dirección de la Estancia: &nbsp;</p></td>
-                            <td class="cuadro"><input type="text" name="d_estancia" ></td>
-                        </tr>
-
-                        <tr class="input-contenedor">
-                            <td><p>Tlfn Estancia: &nbsp;</p></td>
-                            <td class="cuadro"><input type="number" name="tlfn_estancia" ></td>
-                        </tr>
-
-                    </table>
-                    <span class="flechas"><i class="fas fa-arrow-alt-circle-left"></i></span> 
-                
-            </div>
-
-            <div id="tabs-4">
-
-                    <table>
-                        <tr class="input-contenedor">
-                            <td>
-                                Comida: <textarea name="comida" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
-                                Bebida: <textarea name="bebida" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma" ></textarea>
-                                Utensilios: <textarea name="utensilios" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
-                                General: <textarea name="general" id="" cols="20" rows="2" placeholder="Separa las sugerencias con una coma"></textarea>
-                                <!--<
-                                    <select name="elegir_sugerencia">
-                                    option selected value="0"> Elige una opción </option>
-                                    <option value="1">Comida</option> 
-                                    <option value="2">Bebida</option> 
-                                    <option value="3">Utensilios</option>
-                                    <option value="4">General</option>
-                                </select>
-                                &nbsp;<input type="text" name="sugerencia">
-                                -->
-                            </td>
-                            <td>
-                                
-                            </td>
-                        </tr>
-                    </table>
-
-                    <br><br>
-
-                    <input type="submit" name="enviar" value="Enviar">
-                </form>
-            </div>
-
+    <div class="container">
+        <h1>Crea tu viaje paso a paso</h1>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
 
-    </section>
+        <form id="regiration_form" novalidate method="post">
 
-    <footer>
+            <fieldset>
 
-        <div class="contenedor">
-            <p class="Derechos">iViaje &copy; 2020</p>
-                <div class="redes">
-                    <a class="icon-twitter" href="https://www.google.com"></a>
-                    <a class="icon-instagram" href="www.google.com"></a>
-                    <a class="icon-twitch" href="www.google.com"></a>
-                    <a class="icon-facebook-squared" href="www.google.com"></a>
+                <h2>Paso 1: Da nombre a tu viaje</h2>
+                <div class="form-group">
+                    <label for="nviaje">Nombre Viaje</label>
+                    <input type="text" class="form-control" name="nviaje" placeholder="Nombre Viaje">
                 </div>
-        </div>
+                <div class="form-group">
+                    <label for="pais">Pais</label>
+                    <input type="text" class="form-control" name="pais" placeholder="Pais">
+                </div>
+                <div class="form-group">
+                    <label for="bote">Bote</label>
+                    <input type="number" class="form-control" name="bote" placeholder="Bote">
+                </div>
+                <div class="form-group">
+                    <label for="Fecha Inicio Viaje">Fecha Inicio Viaje</label>
+                    <input type="date" class="form-control" name="fecha_ini" placeholder="Fecha Inicio Viaje">
+                </div>
+                <div class="form-group">
+                    <label for="Fecha Final Viaje">Fecha Final Viaje</label>
+                    <input type="date" class="form-control" name="fecha_fin" placeholder="Fecha Final Viaje">
+                </div>
+                <br>
+                <input type="button" class="next btn btn-info" value="Siguiente" />
 
-    </footer>
+            </fieldset>
 
+            <fieldset>
+
+                <h2> Paso 2: Transporte</h2>
+                <div class="form-group">
+                    <label for="transporte">Medio de transporte</label>
+                    <select name="transporte" class="form-control">
+                        <option selected value="0"> Elige una opción </option>
+                        <option value="Coche">Coche</option> 
+                        <option value="Avión">Avión</option> 
+                        <option value="Caravana">Caravana</option>
+                        <option value="Ave">Ave</option>
+                        <option value="Tren">Tren</option>
+                        <option value="Barco">Barco</option>
+                        <option value="Autobus">Autobus</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cantidad">Cantidad de Coches</label>
+                    <input type="number" class="form-control" name="cantidad_coche" placeholder="Cantidad de Coches">
+                </div>
+                <div class="form-group">
+                    <label for="combustible">Combustible</label>
+                    <select name="combustible" class="form-control">
+                        <option selected value="0"> Elige una opción </option>
+                        <option value="Diesel">Diesel</option> 
+                        <option value="Gasolina">Gasolina</option> 
+                        <option value="Hibrido">Hibrido</option>
+                        <option value="Electrico">Electrico</option>
+                    </select>
+                </div>
+                <br>
+                <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+                <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
+
+            </fieldset>
+
+            <fieldset>
+                <h2>Paso 3: Alojamiento</h2>
+                <div class="form-group">
+                    <label for="estancia">Tipo de Estancia</label>
+                    <select name="estancia" class="form-control">
+                        <option selected value="0"> Elige una opción </option>
+                        <option value="Hotel">Hotel</option> 
+                        <option value="Casa Rural">Casa Rural</option> 
+                        <option value="Caravana">Caravana</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección de la Estancia</label>
+                    <input type="text" class="form-control" name="d_estancia" placeholder="Dirección de la Estancia">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono Estancia</label>
+                    <input type="text" class="form-control" name="tlfn_estancia" placeholder="Teléfono Estancia">
+                </div>
+                <br>
+                <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+                <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
+            </fieldset>
+
+            <fieldset>
+                <h2>Paso 4: Añade algo a tu viaje</h2>
+                <div class="form-group">
+                    <label for="comida">Comida</label>
+                    <textarea class="form-control" name="comida" placeholder="Separa las sugerencias con una coma"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="bebida">Bebida</label>
+                    <textarea class="form-control" name="bebida" placeholder="Separa las sugerencias con una coma"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="utensilios">Utensilios</label>
+                    <textarea class="form-control" name="utensilios" placeholder="Separa las sugerencias con una coma"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="general">General</label>
+                    <textarea class="form-control" name="general" placeholder="Separa las sugerencias con una coma"></textarea>
+                </div>
+                <br>
+                <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
+                <input type="submit" name="enviar" class="submit btn btn-success" value="Enviar" id="submit_data" />
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>
