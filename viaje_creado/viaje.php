@@ -101,6 +101,7 @@ include("viaje_creado.php");
                 <td><p class="p_viaje" id="p_<?php echo $k; ?>"><?php echo $array["necesidad_viaje"];?></p><input type="text" id="i_<?php echo $k; ?>"  class="input_viaje" value="<?php echo $array["necesidad_viaje"];?>"></td>
                 <td><p id="u_<?php echo $k; ?>"><?php echo $array3[0];?></p></td>
                 <td><p class="p_oculto" id="id_oculto_<?php echo $k; ?>"><?php echo $array["id_necesidad_viaje"];?></p></td>
+                <td> <button type="button" class="btn btn-danger">Eliminar</button></td>
             </tr>
         <?php
         $k++;
