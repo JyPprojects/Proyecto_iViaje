@@ -1,6 +1,6 @@
 <?php 
-    include("../php/conexion.php");
     include("../php/sesion.php");
+    include("consultas.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -64,7 +64,7 @@
                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos Usuario</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Actualiazar Contraseña</button>
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Actualizar Contraseña</button>
                 </li>
             </ul>
                 <div class="tab-content" id="myTabContent">
@@ -80,21 +80,21 @@
                             <div class="form-group row">
                                 <label for="codigo" class="col-2"> Id_Usuario:</label>
                                     <div class="col-8">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?php echo $_SESSION["id_usuario"]; ?>" readonly>
                                     </div>
                             </div>
                             <br>
                             <div class="form-group row">
                                 <label for="usuarop" class="col-2"> Usuario:</label>
                                     <div class="col-8">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?php echo $_SESSION["usuario"]; ?>">
                                     </div>
                             </div>
                             <br>
                             <div class="form-group row">
                                 <label for="email" class="col-2"> Email:</label>
                                     <div class="col-8">
-                                        <input type="email" class="form-control">
+                                        <input type="email" class="form-control" value="<?php echo $correo; ?>">
                                     </div>
                             </div>
                             <br>
