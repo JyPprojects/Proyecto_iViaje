@@ -81,7 +81,7 @@
                 <?php echo ucfirst($_SESSION["usuario"]); ?>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Ajustes</a></li>
+                <li><a class="dropdown-item" href="../ajustes_perfil/index.php">Ajustes</a></li>
                 <li><a class="dropdown-item" href="#">Acerca de</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="../php/sesion.php?exit='exit'">Cerrar Sesión</a></li>
@@ -97,7 +97,7 @@
         <div class="progress">
             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-
+        <br>
         <form id="regiration_form" novalidate method="post">
 
             <fieldset>
@@ -107,18 +107,22 @@
                     <label for="nviaje">Nombre Viaje</label>
                     <input type="text" class="form-control" name="nviaje" placeholder="Nombre Viaje">
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="pais">Pais</label>
                     <input type="text" class="form-control" name="pais" placeholder="Pais">
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="bote">Bote</label>
                     <input type="number" class="form-control" name="bote" placeholder="Bote">
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="Fecha Inicio Viaje">Fecha Inicio Viaje</label>
                     <input type="date" class="form-control" name="fecha_ini" placeholder="Fecha Inicio Viaje">
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="Fecha Final Viaje">Fecha Final Viaje</label>
                     <input type="date" class="form-control" name="fecha_fin" placeholder="Fecha Final Viaje">
@@ -144,10 +148,12 @@
                         <option value="Autobus">Autobus</option>
                     </select>
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="cantidad">Cantidad de Coches</label>
                     <input type="number" class="form-control" name="cantidad_coche" placeholder="Cantidad de Coches">
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="combustible">Combustible</label>
                     <select name="combustible" class="form-control">
@@ -175,10 +181,12 @@
                         <option value="Caravana">Caravana</option>
                     </select>
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="direccion">Dirección de la Estancia</label>
                     <input type="text" class="form-control" name="d_estancia" placeholder="Dirección de la Estancia">
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="telefono">Teléfono Estancia</label>
                     <input type="text" class="form-control" name="tlfn_estancia" placeholder="Teléfono Estancia">
