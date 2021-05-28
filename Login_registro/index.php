@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="Imagenes/Favicon2.ico">
-	<title>iViaje | Organiza tu Viaje</title> 
+	<title>MAKE AND TRAVEL | Organiza tu Viaje</title> 
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
 	<link rel="stylesheet" href="estilos/hola3.css">
@@ -19,7 +19,7 @@
 <?php  include("login_registro.php"); ?>
  <form class="formulario" method="post">
     
-    <h1>iViaje</h1>
+    <h1>MAKE AND TRAVEL</h1>
     <h3 class="Des">Organiza cualquier viaje con tus amigos o familiares con facilidad.</h3>
         
             <div class="contenedor">

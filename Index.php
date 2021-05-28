@@ -20,7 +20,7 @@ include("php/sesion.php");
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">iViaje</a>
+    <a class="navbar-brand" href="index.php">MAKE AND TRAVEL</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -68,7 +68,7 @@ include("php/sesion.php");
         
         <footer>
             <div class="contenedor">
-            <p class="Derechos">iViaje &copy; 2020</p>
+            <p class="Derechos">MAKE AND TRAVEL &copy; 2021</p>
                 <div class="redes">
                     <a class="icon-twitter" href="https://www.google.com"></a>
                     <a class="icon-instagram" href="www.google.com"></a>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="Imagenes/Favicon2.ico">
-	<title>iViaje | Registrate</title> 
+	<title>MAKE AND TRAVEL | Registrate</title> 
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
     <link rel="stylesheet" href="estilos/hola3.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
@@ -49,7 +49,7 @@
 
  <form class="formulario" method="post">
     
-    <h1>iViaje</h1>
+    <h1>MAKE AND TRAVEL</h1>
     <h3 class="Des">Organiza cualquier viaje con tus amigos o familiares con facilidad.</h3>
         
             <div class="contenedor">
