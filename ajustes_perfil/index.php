@@ -1,6 +1,7 @@
 <?php 
     include("../php/sesion.php");
     include("consultas.php");
+    include("editar.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -77,30 +78,35 @@
                                 alt="">
                         </div>
                         <div class="col-8">
-                            <div class="form-group row">
-                                <label for="codigo" class="col-2"> Id_Usuario:</label>
-                                    <div class="col-8">
-                                        <input type="text" class="form-control" value="<?php echo $_SESSION["id_usuario"]; ?>" readonly>
-                                    </div>
-                            </div>
-                            <br>
-                            <div class="form-group row">
-                                <label for="usuarop" class="col-2"> Usuario:</label>
-                                    <div class="col-8">
-                                        <input type="text" class="form-control" value="<?php echo $_SESSION["usuario"]; ?>">
-                                    </div>
-                            </div>
-                            <br>
-                            <div class="form-group row">
-                                <label for="email" class="col-2"> Email:</label>
-                                    <div class="col-8">
-                                        <input type="email" class="form-control" value="<?php echo $correo; ?>">
-                                    </div>
-                            </div>
-                            <br>
-                            <div class="form-group text-center">
-                                <button class="btn btn-info">Actualizar</button>
-                             </div>
+                            <form method="post">
+                                <div class="form-group row">
+                                    <label for="codigo" class="col-2"> Id_Usuario:</label>
+                                        <div class="col-8">
+                                            <input type="text" class="form-control" name="idm" value="<?php echo $_SESSION["id_usuario"]; ?>" readonly>
+                                        </div>
+                                </div>
+                                <br>
+                                <div class="form-group row">
+                                    <label for="usuarop" class="col-2"> Usuario:</label>
+                                        <div class="col-8">
+                                            <input type="text" class="form-control" name="usuariom" value="<?php echo $u; ?>">
+                                        </div>
+                                </div>
+                                <br>
+                                <div class="form-group row">
+                                    <label for="email" class="col-2"> Email:</label>
+                                        <div class="col-8">
+                                            <input type="email" class="form-control" name="mailm" value="<?php echo $correo; ?>">
+                                        </div>
+                                </div>
+                                <br>
+                                <div class="form-group text-center">
+                                    <button class="btn btn-info" name="Actualizar" value="Actualizar">Actualizar</button>
+                                </div>
+                                <div class="form-group text-center">
+                                    <?php echo "$error"; ?>
+                                </div>
+                             </form>
                         </div>
                     </div>
                 </div>
