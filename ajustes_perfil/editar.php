@@ -1,5 +1,6 @@
 <?php
 $error="";
+$errorcontra="";
 
 include("../php/conexion.php");
 
@@ -13,9 +14,9 @@ include("../php/conexion.php");
 
                 $consulta2="SELECT * FROM datosusuario WHERE usuario='$usuario1m'";
                 $resultado2=mysqli_query($conexion, $consulta2);
-                $comprobar_registro=mysqli_fetch_row($resultado2);
+                $comprobar_usu=mysqli_fetch_row($resultado2);
 
-                if($comprobar_registro==TRUE){
+                if($comprobar_usu==TRUE){
 
                     $error="Usuario ya registrado";
 
@@ -36,6 +37,50 @@ include("../php/conexion.php");
             else{
 
                 $error="No puedes dejar campos vacíos";
+            }
+        
+    }
+
+    if (isset($_POST['Actualizarcontra'])) {
+
+        $contraan=$_POST['contraan'];
+        $contranu=$_POST['contranu'];
+        $contranu2=$_POST['contranu2'];
+        $id1m=$_SESSION["id_usuario"];
+        $hash=password_hash($contranu, PASSWORD_DEFAULT);
+
+            if($contraan !='' && $contranu !='' && $contranu2 !=''){
+
+                $consulta="SELECT contraseña FROM datosusuario WHERE id_usuario='$id1m'";
+                $resultado=mysqli_query($conexion, $consulta);
+                $passbd=mysqli_fetch_row($resultado);
+
+                if(password_verify($contraan, $passbd[0])){
+
+                    if($contranu==$contranu2){
+                        if(!preg_match("/^([a-z]+[0-9]+)|([0-9]+[a-z]+)/i", $contranu)){
+
+                            $errorcontra="La contraseña debe contener mínimo un número";
+                        }
+                        else {
+                            $sql3="UPDATE datosusuario SET contraseña='$hash' WHERE id_usuario='$id1m'";
+                            $actucontra=mysqli_query($conexion, $sql3);
+                            $errorcontra="Contraseña actualizada con exito";
+                        }
+                    }
+                    else {
+                        $errorcontra="Las contraseñas nuevas no coinciden";
+                    }
+
+                }
+                    
+                else{
+                    $errorcontra="La contraseña antigua no coincide";
+                }
+            }
+            else{
+
+                $errorcontra="No puedes dejar campos vacíos";
             }
         
     }

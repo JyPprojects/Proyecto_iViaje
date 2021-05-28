@@ -114,30 +114,35 @@
                     <div class="col-md-6 offset-md-3">
                                 <h3 class="text-center">Cambio de Contraseña</h3>
                                 <br>
-                                <div class="form-group row">
-                                    <label for="Usuario" class="col-4">Contraseña Antigua:</label>
-                                    <div class="col-8">
-                                        <input type="password" class="form-control">
+                                <form method="post">
+                                    <div class="form-group row">
+                                        <label for="Usuario" class="col-4">Contraseña Antigua:</label>
+                                        <div class="col-8">
+                                            <input type="password" class="form-control" name="contraan">
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="form-group row">
-                                    <label for="contrasenia" class="col-4">Contraseña Nueva:</label>
-                                    <div class="col-8">
-                                        <input type="password" class="form-control">
+                                    <br>
+                                    <div class="form-group row">
+                                        <label for="contrasenia" class="col-4">Contraseña Nueva:</label>
+                                        <div class="col-8">
+                                            <input type="password" class="form-control" name="contranu">
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="form-group row">
-                                    <label for="ncontrasenia" class="col-4">Repetir Contraseña Nueva:</label>
-                                    <div class="col-8">
-                                        <input type="password" class="form-control">
+                                    <br>
+                                    <div class="form-group row">
+                                        <label for="ncontrasenia" class="col-4">Repetir Contraseña:</label>
+                                        <div class="col-8">
+                                            <input type="password" class="form-control" name="contranu2">
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="form-group text-center">
-                                    <button class="btn btn-info">Actualizar</button>
-                                </div>
+                                    <br>
+                                    <div class="form-group text-center">
+                                        <button class="btn btn-info" name="Actualizarcontra" value="Actualizarcontra">Actualizar</button>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <?php echo "$errorcontra"; ?>
+                                    </div>
+                                </form>
                     </div>
                 </div>
         </div>
