@@ -19,7 +19,7 @@ include("viaje_creado.php");
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../Index.php">iViaje</a>
+    <a class="navbar-brand" href="../Index.php">Make And Travel</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -76,7 +76,6 @@ include("viaje_creado.php");
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <h3>Comida</h3>
-            <?php print_r($info_comida);?>
             <table class="table table-hover table-dark" id="tabla">
             <tr>
                 <th>Comida</th>
@@ -91,10 +90,7 @@ include("viaje_creado.php");
             $sql3="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array[id_usuario]";
             $query3=mysqli_query($conexion, $sql3);
             $array3=mysqli_fetch_row($query3);
-            $array["id_necesidad_viaje"];
         ?>
-        <div id="resultado"></div>
-
         <div id="resultado"></div>
 
             <tr>
@@ -111,8 +107,6 @@ include("viaje_creado.php");
             <button class="btn btn-primary" id="añadir">Añadir</button>
         
 
-        <h3>Bebida</h3>
-            <?php print_r($info_bebida);?>
             <h3>Bebida</h3>
             <table class="table table-hover table-dark"  id="tabla2">
                 <tr>
@@ -122,11 +116,16 @@ include("viaje_creado.php");
         <?php 
         $x=1;
         while($array2=mysqli_fetch_array($query2)){
+          $sql4="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array2[id_usuario]";
+          $query4=mysqli_query($conexion, $sql4);
+          $array4=mysqli_fetch_row($query4);
         ?>
         <div id="resultado2"></div>      
                 <tr>
                     <td><p class="p_viaje2" id="p2_<?php echo $x; ?>"><?php echo $array2["necesidad_viaje"];?></p><input type="text" id="i2_<?php echo $x; ?>"  class="input_viaje2" value="<?php echo $array2["necesidad_viaje"];?>"></td>
-                    <td><p id="u2_<?php echo $x; ?>"><?php echo $array2["id_usuario"];?></p></td>
+                    <td><p id="u2_<?php echo $x; ?>"><?php echo $array4[0];?></p></td>
+                    <td><p class="p_oculto2" id="id_oculto2_<?php echo $x; ?>"><?php echo $array2["id_necesidad_viaje"];?></p></td>
+                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
                     </tr>
         <?php
         $x++;
