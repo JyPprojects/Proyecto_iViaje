@@ -8,7 +8,6 @@
         // UPDATE DE LOS DATOS DE LA TABLA
        $("#tabla").click(function(event)  { 
             var target = $(event.target); 
-            console.log(target);
             var id = target.attr("id"); 
 
                 if (id){

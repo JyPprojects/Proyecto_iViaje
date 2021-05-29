@@ -13,10 +13,5 @@ if (!empty($_GET["input_nuevo"]) && empty($resultado[0])){
     $sql="INSERT INTO necesidades_viaje (id_viaje, id_necesidad, id_usuario, necesidad_viaje) VALUES ('$id_viaje' , 1 , '$usuario_nuevo' , '$input_nuevo')";
     $consulta=mysqli_query($conexion, $sql);
 }
-else{
-    echo "por ahí no paso";
-}
-
-
 
 ?>
