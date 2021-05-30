@@ -50,6 +50,9 @@ if (!empty($nviaje && $fecha_ini && $fecha_fin && $bote)){
                     
                 }
             $_SESSION["id_viaje"]=end($array_id_viaje); //Con esto tenemos en SESSION el ID VIAJE generado por la consulta anterior.
+            
+            $insertar_viaje2="INSERT INTO viajes_usuario (id_viaje, id_usuario) VALUES ('$_SESSION[id_viaje]', '$_SESSION[id_usuario]')";
+            mysqli_query($conexion, $insertar_viaje2);
 
             //Generar URL
             echo "Esta es la dirección del viaje: "; echo "<br>";

@@ -166,15 +166,14 @@ include("viaje_creado.php");
   </div>
 
   <div class="tab-pane fade" id="participantes" role="tabpanel" aria-labelledby="participantes-tab">
-
-    <input type="text">
-    <input type="submit" value="enviar" name="enviar">
+    <form method="post">
+      <input type="text" name="usu_invitado">
+      <input type="submit" value="Invitar" name="Invitar">
+    </form>
     <br>
     <?php  
-    while($array6=mysqli_fetch_array($query6)){
-      echo "$array6[0]";
-      echo "<br>";
-    }
+      include("participantes.php");
+      echo "$error";
     ?>
         
   </div>
