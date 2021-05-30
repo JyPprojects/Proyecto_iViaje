@@ -6,7 +6,7 @@ $error="";
 include("php/conexion.php");
 
 //CÓDIGO
-$consulta1="SELECT idviaje FROM viajes WHERE id_usuario='$_SESSION[id_usuario]'";
+$consulta1="SELECT id_viaje FROM viajes_usuario WHERE id_usuario='$_SESSION[id_usuario]'";
 $resultado1=mysqli_query($conexion, $consulta1);
 $eleccion=mysqli_fetch_row($resultado1);
 

@@ -14,7 +14,7 @@ if (isset($_POST["login"])){
     
     $usuario1=mysqli_real_escape_string($conexion, $_POST["usu"]);
     $contraseña1=mysqli_real_escape_string($conexion, $_POST["pass"]);
-    $id_viaje=select_query("idviaje", "viajes", "id_usuario", "$_SESSION[id_usuario]");
+
         if($usuario1 !='' && $contraseña1 !=''){
     
 
@@ -30,7 +30,7 @@ if (isset($_POST["login"])){
                     session_start();
                     $_SESSION["usuario"]=$_POST["usu"];
                     $_SESSION["id_usuario"]=$id_usuario[0];
-                    $id_viaje=select_query("idviaje", "viajes", "id_usuario", "$_SESSION[id_usuario]");
+                    $id_viaje=select_query("id_viaje", "viajes_usuario", "id_usuario", "$_SESSION[id_usuario]");
                     if(!empty($id_viaje)){
                         
                         $_SESSION["id_viaje"]=$id_viaje[0];

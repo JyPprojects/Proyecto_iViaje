@@ -13,7 +13,7 @@ include("viaje_creado.php");
     <script src="../librerias/jquery-3.5.1.js"></script>
     <script src="comida.js"></script>
     <script src="bebida.js"></script>
-    <title><?php echo ucfirst($_SESSION["usuario"]); ?> | <?php echo $info_viaje[2];?></title>
+    <title><?php echo ucfirst($_SESSION["usuario"]); ?> | <?php echo $info_viaje[0];?></title>
 
 </head>
 <body>
@@ -51,7 +51,9 @@ include("viaje_creado.php");
     </div>
   </div>
 </nav>
+<?php 
 
+?>
 <div>
 <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
@@ -72,10 +74,10 @@ include("viaje_creado.php");
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-  <h1>Viaje: <?php echo $info_viaje[2];?></h1>
-        <h1>Fecha de inicio: <?php echo $info_viaje[3];?></h1>
-        <h1>Fecha fin: <?php echo $info_viaje[4];?></h1>
-        <h1>Bote: <?php echo $info_viaje[5];?>€</h1>
+  <h1>Viaje: <?php echo $info_viaje[0];?></h1>
+        <h1>Fecha de inicio: <?php echo $info_viaje[1];?></h1>
+        <h1>Fecha fin: <?php echo $info_viaje[2];?></h1>
+        <h1>Bote: <?php echo $info_viaje[3];?>€</h1>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <h3>Comida</h3>
