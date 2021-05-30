@@ -66,6 +66,9 @@ include("viaje_creado.php");
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="alojamiento-tab" data-bs-toggle="tab" data-bs-target="#alojamiento" type="button" role="tab" aria-controls="alojamiento" aria-selected="false">Alojamiento</button>
   </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="participantes-tab" data-bs-toggle="tab" data-bs-target="#participantes" type="button" role="tab" aria-controls="participantes" aria-selected="false">Participantes</button>
+  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -116,14 +119,14 @@ include("viaje_creado.php");
         <?php 
         $x=1;
         while($array2=mysqli_fetch_array($query2)){
-          $sql4="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array2[id_usuario]";
-          $query4=mysqli_query($conexion, $sql4);
-          $array4=mysqli_fetch_row($query4);
+          $sql5="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array2[id_usuario]";
+          $query5=mysqli_query($conexion, $sql5);
+          $array5=mysqli_fetch_row($query5);
         ?>
         <div id="resultado2"></div>      
                 <tr>
                     <td><p class="p_viaje2" id="p2_<?php echo $x; ?>"><?php echo $array2["necesidad_viaje"];?></p><input type="text" id="i2_<?php echo $x; ?>"  class="input_viaje2" value="<?php echo $array2["necesidad_viaje"];?>"></td>
-                    <td><p id="u2_<?php echo $x; ?>"><?php echo $array4[0];?></p></td>
+                    <td><p id="u2_<?php echo $x; ?>"><?php echo $array5[0];?></p></td>
                     <td><p class="p_oculto2" id="id_oculto2_<?php echo $x; ?>"><?php echo $array2["id_necesidad_viaje"];?></p></td>
                     <td><button type="button" class="btn btn-danger">Eliminar</button></td>
                     </tr>
@@ -158,6 +161,20 @@ include("viaje_creado.php");
         <h3>Tipo de alojamiento: <?php echo $info_estancia[1];?></h1> </h3>
         <h3>Direccion: <?php echo $info_estancia[2];?></h1> </h3>
         <h3>Telefono: <?php echo $info_estancia[3];?></h1> </h3>
+  </div>
+
+  <div class="tab-pane fade" id="participantes" role="tabpanel" aria-labelledby="participantes-tab">
+
+    <input type="text">
+    <input type="submit" value="enviar" name="enviar">
+    <br>
+    <?php  
+    while($array6=mysqli_fetch_array($query6)){
+      echo "$array6[0]";
+      echo "<br>";
+    }
+    ?>
+        
   </div>
 </div>
 </div>

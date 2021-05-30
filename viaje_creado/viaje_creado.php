@@ -18,4 +18,13 @@ $query=mysqli_query($conexion, $sql);
 $sql2="SELECT id_necesidad_viaje, id_usuario, necesidad_viaje FROM necesidades_viaje WHERE id_necesidad = 2 AND id_viaje = $_SESSION[id_viaje]";
 $query2=mysqli_query($conexion, $sql2);
 
+$sql3="SELECT id_necesidad_viaje, id_usuario, necesidad_viaje FROM necesidades_viaje WHERE id_necesidad = 2 AND id_viaje = $_SESSION[id_viaje]";
+$query3=mysqli_query($conexion, $sql3);
+
+$sql4="SELECT id_necesidad_viaje, id_usuario, necesidad_viaje FROM necesidades_viaje WHERE id_necesidad = 2 AND id_viaje = $_SESSION[id_viaje]";
+$query4=mysqli_query($conexion, $sql4);
+
+$sql6="SELECT usuario FROM datosusuario INNER JOIN viajes_usuario on datosusuario.id_usuario=viajes_usuario.id_usuario";
+$query6=mysqli_query($conexion, $sql6);
+
 ?>
