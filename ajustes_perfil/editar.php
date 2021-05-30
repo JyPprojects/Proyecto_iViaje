@@ -30,6 +30,7 @@ include("../php/conexion.php");
                     else{
                         $sql2="UPDATE datosusuario SET usuario='$usuario1m', correo='$mail1m' WHERE id_usuario='$id1m'";
                         $actu=mysqli_query($conexion, $sql2);
+                        $_SESSION["usuario"]=$usuario1m;
                         header("Location: index.php");
                     }     
                 }
@@ -84,4 +85,22 @@ include("../php/conexion.php");
             }
         
     }
+
+    if (isset($_POST['guardar'])) {
+        $id1m=$_SESSION["id_usuario"];
+
+        if (isset($_FILES['foto']['name'])) {
+            $tipoArchivo = $_FILES['foto']['type'];
+            $nombreArchivo = $_FILES['foto']['name'];
+            $tamanoArchivo = $_FILES['foto']['size'];
+            $imagenSubida = fopen($_FILES['foto']['tmp_name'], 'r');
+            $binariosImagen = fread($imagenSubida, $tamanoArchivo);
+            $binariosImagen = mysqli_escape_string($conexion, $binariosImagen);
+
+            $subir_imagen="UPDATE datosusuario SET imagen='".$binariosImagen."', tipo_imagen='".$tipoArchivo."' WHERE id_usuario='$id1m'";
+            mysqli_query($conexion, $subir_imagen);
+            header("Location: index.php");
+        }
+        
+    } 
 ?>
