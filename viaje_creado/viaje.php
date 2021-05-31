@@ -170,7 +170,7 @@ include("viaje_creado.php");
       <input type="text" name="usu_invitado">
       <input type="submit" value="Invitar" name="Invitar">
     </form>
-    <br>
+    
     <?php  
       include("participantes.php");
       echo "$error";

@@ -18,10 +18,20 @@ if (isset($_POST['Invitar'])) {
         }
             
         else{
+
+            $consulta3="SELECT * FROM viajes_usuario WHERE id_usuario='$comprobar_usu[0]'";
+            $resultado3=mysqli_query($conexion, $consulta3);
+            $comprobar_usu2=mysqli_fetch_row($resultado3);
+
+            if ($comprobar_usu2==TRUE) {
+                $error="El usuario ya esta participando en otro viaje";
+            }
             
-            $invitar_usu="INSERT INTO viajes_usuario (id_viaje, id_usuario) VALUES ('$_SESSION[id_viaje]', '$comprobar_usu[0]')";
-            mysqli_query($conexion, $invitar_usu);
-                
+            else {
+                $invitar_usu="INSERT INTO viajes_usuario (id_viaje, id_usuario) VALUES ('$_SESSION[id_viaje]', '$comprobar_usu[0]')";
+                mysqli_query($conexion, $invitar_usu);
+            }
+             
         }
     }
     else{
