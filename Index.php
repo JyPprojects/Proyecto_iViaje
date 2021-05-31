@@ -58,15 +58,9 @@ include("php/sesion.php");
         <h1>Que desea hacer...</h1>
     </section>
 
-            <article class="sidebar1">
-                <a href="formulario/formulario.php?nuevoviaje='nuevoviaje'"><img src="menu_post-login/Imagenes/mas.png" alt="Error al cargar"> 
-                <h2>Nuevo Viaje</h2></a>
-            </article>
-
 <?php include("eleccion.php");?> 
 
 
-        
         <footer>
             <div class="contenedor">
             <p class="Derechos">MAKE AND TRAVEL &copy; 2021</p>

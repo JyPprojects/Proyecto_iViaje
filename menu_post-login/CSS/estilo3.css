@@ -119,6 +119,10 @@ a{
     color: black;
 }
 
+.letra{
+    color: rgba(88, 88, 88, 585858);
+}
+
 footer{
     background: #9ba1986b;
     width: 100%;
