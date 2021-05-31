@@ -65,7 +65,7 @@ include("php/sesion.php");
             <div class="contenedor">
             <p class="Derechos">MAKE AND TRAVEL &copy; 2021</p>
                 <div class="redes">
-                    <a class="icon-twitter" href="https://www.google.com"></a>
+                    <a class="icon-twitter" href="https://twitter.com/MartRod13"></a>
                     <a class="icon-instagram" href="www.google.com"></a>
                     <a class="icon-twitch" href="www.google.com"></a>
                     <a class="icon-facebook-squared" href="www.google.com"></a>
