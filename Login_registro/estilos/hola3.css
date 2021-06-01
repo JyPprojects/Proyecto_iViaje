@@ -111,3 +111,11 @@ p{
         border-radius: 2%;
     }
 }
+
+.enlace{
+    text-decoration: none;
+}
+
+.seleccion{
+    color: rgb(0, 115, 13);
+}

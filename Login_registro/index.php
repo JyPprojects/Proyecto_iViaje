@@ -25,7 +25,7 @@
             <div class="contenedor">
 
                 <div class="Ini">
-                <h3><a href="">Iniciar Sesion</a> | <a href="registro.php">Registrarse</a></h3>
+                <h3><span class="seleccion">Iniciar Sesion</span> | <a class="enlace" href="registro.php">Registrarse</a></h3>
                 </div>
 
                 <div class="input-contenedor">
