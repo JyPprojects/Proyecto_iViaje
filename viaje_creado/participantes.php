@@ -41,8 +41,5 @@ if (isset($_POST['Invitar'])) {
     
 }
 
-while($array6=mysqli_fetch_array($query6)){
-    echo "$array6[0]";
-    echo "<br>";
-}
+
 ?>
