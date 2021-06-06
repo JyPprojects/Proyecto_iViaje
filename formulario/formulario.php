@@ -13,40 +13,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="formulario.js"></script> 
     <style type="text/css">
         #regiration_form fieldset:not(:first-of-type) {
             display: none;
         }
     </style>
-    <script>
-        $(document).ready(function(){
-        var current = 1,current_step,next_step,steps;
-        steps = $("fieldset").length;
-        $(".next").click(function(){
-        current_step = $(this).parent();
-        next_step = $(this).parent().next();
-        next_step.show();
-        current_step.hide();
-        setProgressBar(++current);
-        });
-        $(".previous").click(function(){
-        current_step = $(this).parent();
-        next_step = $(this).parent().prev();
-        next_step.show();
-        current_step.hide();
-        setProgressBar(--current);
-        });
-        setProgressBar(current);
-        // Change progress bar action
-        function setProgressBar(curStep){
-        var percent = parseFloat(100 / steps) * curStep;
-        percent = percent.toFixed();
-        $(".progress-bar")
-        .css("width",percent+"%")
-        .html(percent+"%");
-        }
-        });
-    </script>
     <script>
         $( function() {
             $( "#tabs" ).tabs();
@@ -100,30 +72,30 @@
                 <h2>Paso 1: Da nombre a tu viaje</h2>
                 <div class="form-group">
                     <label for="nviaje">Nombre Viaje</label>
-                    <input type="text" class="form-control" name="nviaje" placeholder="Nombre Viaje">
+                    <input id="nviaje" type="text" class="form-control" name="nviaje" placeholder="Nombre Viaje">
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="pais">Pais</label>
-                    <input type="text" class="form-control" name="pais" placeholder="Pais">
+                    <input id="pais" type="text" class="form-control" name="pais" placeholder="Pais">
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="bote">Bote</label>
-                    <input type="number" class="form-control" name="bote" placeholder="Bote">
+                    <input id="bote" type="number" class="form-control" name="bote" placeholder="Bote">
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="Fecha Inicio Viaje">Fecha Inicio Viaje</label>
-                    <input type="date" class="form-control" name="fecha_ini" placeholder="Fecha Inicio Viaje">
+                    <input id="fecha_ini" type="date" class="form-control" name="fecha_ini" placeholder="Fecha Inicio Viaje">
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="Fecha Final Viaje">Fecha Final Viaje</label>
-                    <input type="date" class="form-control" name="fecha_fin" placeholder="Fecha Final Viaje">
+                    <input id="fecha_fin" type="date" class="form-control" name="fecha_fin" placeholder="Fecha Final Viaje">
                 </div>
                 <br>
-                <input type="button" class="next btn btn-info" value="Siguiente" />
+                <input id="siguiente1" type="button" class="next btn btn-info" value="Siguiente" />
 
             </fieldset>
 
@@ -132,8 +104,8 @@
                 <h2> Paso 2: Transporte</h2>
                 <div class="form-group">
                     <label for="transporte">Medio de transporte</label>
-                    <select name="transporte" class="form-control">
-                        <option selected value="0"> Elige una opción </option>
+                    <select id="transporte" name="transporte" class="form-control">
+                        <option selected value=""> Elige una opción </option>
                         <option value="Coche">Coche</option> 
                         <option value="Avión">Avión</option> 
                         <option value="Caravana">Caravana</option>
@@ -146,13 +118,13 @@
                 <br>
                 <div class="form-group">
                     <label for="cantidad">Cantidad de Coches</label>
-                    <input type="number" class="form-control" name="cantidad_coche" placeholder="Cantidad de Coches">
+                    <input id="c_coches" type="number" class="form-control" name="cantidad_coche" placeholder="Cantidad de Coches">
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="combustible">Combustible</label>
-                    <select name="combustible" class="form-control">
-                        <option selected value="0"> Elige una opción </option>
+                    <select id="combustible" name="combustible" class="form-control">
+                        <option selected value=""> Elige una opción </option>
                         <option value="Diesel">Diesel</option> 
                         <option value="Gasolina">Gasolina</option> 
                         <option value="Hibrido">Hibrido</option>
@@ -161,7 +133,7 @@
                 </div>
                 <br>
                 <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
-                <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
+                <input id="siguiente2" type="button" name="next" class="next btn btn-info" value="Siguiente" />
 
             </fieldset>
 
@@ -169,8 +141,8 @@
                 <h2>Paso 3: Alojamiento</h2>
                 <div class="form-group">
                     <label for="estancia">Tipo de Estancia</label>
-                    <select name="estancia" class="form-control">
-                        <option selected value="0"> Elige una opción </option>
+                    <select id="estancia" name="estancia" class="form-control">
+                        <option selected value=""> Elige una opción </option>
                         <option value="Hotel">Hotel</option> 
                         <option value="Casa Rural">Casa Rural</option> 
                         <option value="Caravana">Caravana</option>
@@ -179,16 +151,16 @@
                 <br>
                 <div class="form-group">
                     <label for="direccion">Dirección de la Estancia</label>
-                    <input type="text" class="form-control" name="d_estancia" placeholder="Dirección de la Estancia">
+                    <input id="direccion" type="text" class="form-control" name="d_estancia" placeholder="Dirección de la Estancia">
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="telefono">Teléfono Estancia</label>
-                    <input type="text" class="form-control" name="tlfn_estancia" placeholder="Teléfono Estancia">
+                    <input id="tlf_estancia" type="text" class="form-control" name="tlfn_estancia" placeholder="Teléfono Estancia">
                 </div>
                 <br>
                 <input type="button" name="previous" class="previous btn btn-default" value="Atras" />
-                <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
+                <input id="siguiente3" type="button" name="next" class="next btn btn-info" value="Siguiente" />
             </fieldset>
 
             <fieldset>
