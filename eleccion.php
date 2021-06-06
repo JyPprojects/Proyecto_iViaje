@@ -10,7 +10,7 @@ $consulta1="SELECT id_viaje FROM viajes_usuario WHERE id_usuario='$_SESSION[id_u
 $resultado1=mysqli_query($conexion, $consulta1);
 $eleccion=mysqli_fetch_row($resultado1);
 
-$consulta2="SELECT viajes.nombre_viaje FROM viajes INNER JOIN viajes_usuario on viajes.idviaje=viajes_usuario.id_viaje WHERE viajes.idviaje=$_SESSION[id_viaje] ";
+$consulta2="SELECT viajes.nombre_viaje FROM viajes INNER JOIN viajes_usuario on viajes.idviaje=viajes_usuario.id_viaje WHERE viajes.idviaje='$_SESSION[id_viaje]'";
 $resultado2=mysqli_query($conexion, $consulta2);
 $eleccion2=mysqli_fetch_row($resultado2);
 
