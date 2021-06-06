@@ -11,6 +11,9 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <script src="jquery.ui.datepicker-es.js"></script>
+    <link rel="stylesheet" type="text/css" href="../alertifyjs/css/alertify.css">
+    <link rel="stylesheet" type="text/css" href="../alertifyjs/css/themes/default.css">
+    <script src="../alertifyjs/alertify.js" type="text/javascript"></script>
 
     <script>
         $.datepicker.regional['es'] = {
@@ -95,7 +98,7 @@
 
                 <input type="submit" value="Registrarse" class="button" name="enviar">
                 <p>Al registrarte, aceptará nuestras Condiciones de uso y Política de privacidad.</p>
-                <?php echo $registro;
+                <?php
                       echo $error;
                  ?> 
             </div>

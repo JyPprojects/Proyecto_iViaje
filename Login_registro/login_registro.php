@@ -46,15 +46,20 @@ if (isset($_POST["login"])){
                             header("Location: ../Index.php");
                         }                                                 
                 }
-                else{   
-                    $error="Usuario o contraseña incorrecto";                        
-                }
+                else{?>
+
+                    <script>
+                        alertify.error('Usuario o contraseña incorrectos'); 
+                    </script>
+
+                <?php }
     
         }
-        else{
-            
-            $error="No puedes dejar campos vacíos";
-        }
+        else{?>
+            <script>
+                alertify.error('No se pueden dejar campos vacíos'); 
+            </script>
+        <?php }
     
 }
 
@@ -80,40 +85,47 @@ if(isset($_POST["enviar"])){
                 $comprobar_registro=mysqli_fetch_row($resultado2);
 
 
-                    if($comprobar_registro==TRUE){
+                    if($comprobar_registro==TRUE){?>
 
-                        $error="Usuario o correo ya registrado";
+                        <script>
+                            alertify.error('Usuario o correo ya registrado'); 
+                        </script>
 
-                    }
+                    <?php }
                     
-                    elseif($contraseña1!=$contraseña2){
+                    elseif($contraseña1!=$contraseña2){?>
 
-                        $error="Las contraseñas no coinciden";
-                                    
-                    }
+                        <script>
+                            alertify.error('Las contraseñas no coinciden'); 
+                        </script>
+                            
+                    <?php }
                     
                     else{
                     
-                            if(!preg_match("/^([a-z]+[0-9]+)|([0-9]+[a-z]+)/i", $contraseña1)){
-
-                                $error="La contraseña debe contener números y letras";
-                            }
-                            elseif(!preg_match("/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/", $correo1)){
-
-                                $error="El correo no es válido";
-                            }
+                            if(!preg_match("/^([a-z]+[0-9]+)|([0-9]+[a-z]+)/i", $contraseña1)){?>
+                                <script>
+                                    alertify.error('La contraseña debe contener números y letras'); 
+                                </script>
+                            <?php }
+                            elseif(!preg_match("/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/", $correo1)){?>
+                                <script>
+                                    alertify.error('El correo no es válido'); 
+                                </script>
+                            <?php }
                             else{
                                 $consulta3="INSERT INTO datosusuario (usuario, contraseña, correo, fecha, nombre, apellidos) VALUES ('$usuario1', '$hash1', '$correo1', '$fecha_naci1', '$nombre1', '$apellidos1') ";
                                 $resultado3=mysqli_query($conexion, $consulta3);
-                                header("Location: index.php");
-                                $registro="Usuario registrado con éxito";
+                                header("Location: index.php?registro=Usuario registrado con éxito");
                             }     
                     }
             }
             else{
-
-                $error="No puedes dejar campos vacíos";
-            }
+                ?>
+                <script>
+                    alertify.error('No se pueden dejar campos vacíos'); 
+                </script>
+            <?php }
 
     }
 
