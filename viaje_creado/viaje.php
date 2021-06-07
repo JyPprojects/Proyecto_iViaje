@@ -1,6 +1,7 @@
 <?php
 include("viaje_creado.php");
 include("participantes.php");
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -214,20 +215,22 @@ $z++;
     </div>
 
     <div class="tab-pane fade" id="participantes" role="tabpanel" aria-labelledby="participantes-tab">
-    <div id="resultado5"></div>  
-      <form method="post" action="viaje.php">
-        <input type="text" name="usu_invitado">
-        <input type="submit" value="Invitar" name="Invitar" id="enviar">
+    <div id="resultado5"> 
+      <form method="post" action="">
+        <input type="text" name="usu_invitado" id="name">
+        <input type="submit" value="Invitar" name="Invitar" onclick="return clickButton();">
       </form>
-      
+      <p id="msg"></p>
+
+      <div id="part">
       <?php  
         while($array6=mysqli_fetch_array($query6)){
           echo "$array6[0]";
           echo "<br>";
       }
-        echo "$error";
       ?>
-          
+      </div>
+      </div>     
     </div>
   </div>
   </div>
