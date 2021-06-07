@@ -39,11 +39,17 @@ include("php/sesion.php");
       </ul>
       <ul class="navbar-nav me-righ mb-2 mb-lg-0" style="margin-right: 5%;">
         <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php echo ucfirst($_SESSION["usuario"]); ?>
-              </a>
-              <?php include("php/admin.php"); ?> 
-            </li>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <?php if (!empty($_SESSION['imagen'])) { ?> 
+            <img src="data:<?php echo $_SESSION['tipo_imagen'];?>;base64,<?php echo base64_encode($_SESSION['imagen']);?>" alt="" width="30" height="24" class="d-inline-block align-text-top" style="border-radius: 50%"><?php echo ucfirst($_SESSION["usuario"]); ?>
+          <?php }  
+
+          else { ?> 
+              <?php echo ucfirst($_SESSION["usuario"]); ?>
+          <?php } ?>
+          </a>
+          <?php include("php/admin.php"); ?> 
+        </li>
       </ul> 
     </div>
   </div>

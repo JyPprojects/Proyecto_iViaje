@@ -42,7 +42,13 @@
             <ul class="navbar-nav me-righ mb-2 mb-lg-0" style="margin-right: 5%;">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php if (!empty($_SESSION['imagen'])) { ?> 
+                        <img src="data:<?php echo $_SESSION['tipo_imagen'];?>;base64,<?php echo base64_encode($_SESSION['imagen']);?>" alt="" width="30" height="24" class="d-inline-block align-text-top" style="border-radius: 50%"><?php echo ucfirst($_SESSION["usuario"]); ?>
+                    <?php }  
+
+                    else { ?> 
                         <?php echo ucfirst($_SESSION["usuario"]); ?>
+                    <?php } ?>
                     </a>
                     <?php include("../php/admin2.php"); ?> 
                 </li>
@@ -73,8 +79,8 @@
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row">
                         <div class="col-4">
-                            <?php if (!empty($imagen[0])) { ?> 
-                                <img class='img-thumbnail' src="data:<?php echo $row['tipo_imagen'];?>;base64,<?php echo base64_encode($row['imagen']);?>">
+                            <?php if (!empty($_SESSION['imagen'])) { ?> 
+                                <img class='img-thumbnail' src="data:<?php echo $_SESSION['tipo_imagen'];?>;base64,<?php echo base64_encode($_SESSION['imagen']);?>">
                             <?php }  
 
                             else { ?> 

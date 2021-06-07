@@ -54,14 +54,15 @@
       <ul class="navbar-nav me-righ mb-2 mb-lg-0" style="margin-right: 5%;">
         <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php echo ucfirst($_SESSION["usuario"]); ?>
+              <?php if (!empty($_SESSION['imagen'])) { ?> 
+                    <img src="data:<?php echo $_SESSION['tipo_imagen'];?>;base64,<?php echo base64_encode($_SESSION['imagen']);?>" alt="" width="30" height="24" class="d-inline-block align-text-top" style="border-radius: 50%"><?php echo ucfirst($_SESSION["usuario"]); ?>
+                <?php }  
+
+                else { ?> 
+                    <?php echo ucfirst($_SESSION["usuario"]); ?>
+                <?php } ?>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="../ajustes_perfil/index.php">Ajustes</a></li>
-                    <li><a class="dropdown-item" href="#">Acerca de</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="../php/sesion.php?exit='exit'">Cerrar Sesión</a></li>
-                </ul>
+              <?php include("../php/admin2.php"); ?> 
             </li>
       </ul> 
     </div>

@@ -20,16 +20,18 @@ if (isset($_POST["login"])){
 
              $contraseñabd=select_query("contraseña", "datosusuario", "usuario", $usuario1);
 
-             $consultaid1="SELECT id_usuario FROM datosusuario WHERE usuario='$usuario1'";
+             $consultaid1="SELECT * FROM datosusuario WHERE usuario='$usuario1'";
              $resultadoid1=mysqli_query($conexion, $consultaid1);
-             $id_usuario=mysqli_fetch_row($resultadoid1);
+             $id_usuario=mysqli_fetch_assoc($resultadoid1);
              
     
                 if(!empty($contraseñabd) && password_verify($contraseña1, $contraseñabd[0])){
     
                     session_start();
                     $_SESSION["usuario"]=$_POST["usu"];
-                    $_SESSION["id_usuario"]=$id_usuario[0];
+                    $_SESSION["id_usuario"]=$id_usuario['id_usuario'];
+                    $_SESSION["imagen"]=$id_usuario['imagen'];
+                    $_SESSION["tipo_imagen"]=$id_usuario['tipo_imagen'];
                     $id_viaje=select_query("id_viaje", "viajes_usuario", "id_usuario", "$_SESSION[id_usuario]");
                     if(!empty($id_viaje)){
                         

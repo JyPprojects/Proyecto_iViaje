@@ -7,9 +7,10 @@
     $row = mysqli_fetch_assoc($resultado);
     $correo="$row[correo]";
     $u="$row[usuario]";
+    $im="$row[imagen]";
+    $tip="$row[tipo_imagen]";
 
-    $sql2="SELECT imagen FROM datosusuario WHERE id_usuario='$_SESSION[id_usuario]'";
-    $resultado2=mysqli_query($conexion, $sql2);
-    $imagen=mysqli_fetch_row($resultado2);
+    $_SESSION["imagen"]=$im;
+    $_SESSION["tipo_imagen"]=$tip;
     
 ?>
