@@ -14,7 +14,7 @@
 
     <script>
         $(document).ready(function(){
-            $("body").hide().fadeIn(2000);
+            $("body").hide().fadeIn(1000);
         });
     </script>
 

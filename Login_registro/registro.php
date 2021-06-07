@@ -45,6 +45,12 @@
         });
     </script>
 
+    <script>
+        $(document).ready(function(){
+            $("body").hide().fadeIn(1000);
+        });
+    </script>
+
 </head>  
 <body>
 <?php include("login_registro.php"); ?>
