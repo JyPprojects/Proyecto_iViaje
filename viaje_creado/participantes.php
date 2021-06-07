@@ -1,9 +1,10 @@
-<?php 
+<?php
+include("../php/conexion.php");
+include("../php/sesion.php");
 $error="";
+if (isset($_POST['name'])) {
 
-if (isset($_POST['Invitar'])) {
-
-    $usu_invitado=$_POST['usu_invitado'];
+    $usu_invitado=$_POST['name'];
 
     if($usu_invitado !=''){
 
@@ -40,6 +41,6 @@ if (isset($_POST['Invitar'])) {
     }
     
 }
-
+echo $error;
 
 ?>
