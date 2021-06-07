@@ -17,7 +17,7 @@ $(document).ready(function(){
                 setProgressBar(++current);
             }
             else{
-                alert("Tienes que rellenar todos los campos");
+                alertify.error('Tienes que rellenar todos los campos');
             }
         });
         $("#siguiente2").click(function(){
@@ -33,7 +33,7 @@ $(document).ready(function(){
                 setProgressBar(++current);
             }
             else{
-                alert("Tienes que rellenar todos los campos");
+                alertify.error('Tienes que rellenar todos los campos');
             }
 
         });
@@ -50,7 +50,7 @@ $(document).ready(function(){
                 setProgressBar(++current);
             }
             else{
-                alert("Tienes que rellenar todos los campos");
+                alertify.error('Tienes que rellenar todos los campos');
             }
 
         });

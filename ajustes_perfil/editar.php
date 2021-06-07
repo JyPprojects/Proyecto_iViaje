@@ -16,17 +16,14 @@ include("../php/conexion.php");
                 $resultado2=mysqli_query($conexion, $consulta2);
                 $comprobar_usu=mysqli_fetch_row($resultado2);
 
-                if($comprobar_usu==TRUE){
-
-                    $error="Usuario ya registrado";
-
-                }
+                if($comprobar_usu==TRUE){?>
+                    <script>alertify.error('Usuario ya registrado');</script>
+                <?php }
                     
                 else{
-                    if(!preg_match("/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/", $mail1m)){
-
-                        $error="El correo no es válido";
-                    }
+                    if(!preg_match("/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/", $mail1m)){?>
+                        <script>alertify.error('la direccion de correo no es valida');</script>
+                    <?php }
                     else{
                         $sql2="UPDATE datosusuario SET usuario='$usuario1m', correo='$mail1m' WHERE id_usuario='$id1m'";
                         $actu=mysqli_query($conexion, $sql2);
@@ -35,10 +32,9 @@ include("../php/conexion.php");
                     }     
                 }
             }
-            else{
-
-                $error="No puedes dejar campos vacíos";
-            }
+            else{?>
+                <script>alertify.error('No se pueden dejar campos vacíos');</script>
+            <?php }
         
     }
 
@@ -59,30 +55,28 @@ include("../php/conexion.php");
                 if(password_verify($contraan, $passbd[0])){
 
                     if($contranu==$contranu2){
-                        if(!preg_match("/^([a-z]+[0-9]+)|([0-9]+[a-z]+)/i", $contranu)){
-
-                            $errorcontra="La contraseña debe contener mínimo un número";
-                        }
+                        if(!preg_match("/^([a-z]+[0-9]+)|([0-9]+[a-z]+)/i", $contranu)){?>
+                            <script>alertify.error('La contraseña debe contener mínimo un número');</script>
+                        <?php }
                         else {
                             $sql3="UPDATE datosusuario SET contraseña='$hash' WHERE id_usuario='$id1m'";
-                            $actucontra=mysqli_query($conexion, $sql3);
-                            $errorcontra="Contraseña actualizada con exito";
-                        }
+                            $actucontra=mysqli_query($conexion, $sql3);?>
+                            <script>alertify.success('Contraseña actualizada con exito');</script>
+                        <?php }
                     }
-                    else {
-                        $errorcontra="Las contraseñas nuevas no coinciden";
-                    }
+                    else {?>
+                        <script>alertify.error('La contraseña nueva no coincide');</script>
+                    <?php }
 
                 }
                     
-                else{
-                    $errorcontra="La contraseña antigua no coincide";
-                }
+                else{?>
+                    <script>alertify.error('La contraseña antigua no coincide');</script>
+                <?php }
             }
-            else{
-
-                $errorcontra="No puedes dejar campos vacíos";
-            }
+            else{?>
+                <script>alertify.error('No se pueden dejar campos vacíos');</script>
+            <?php }
         
     }
 

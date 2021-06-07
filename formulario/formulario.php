@@ -15,6 +15,9 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="formulario.js"></script> 
+    <link rel="stylesheet" type="text/css" href="../alertifyjs/css/alertify.css">
+    <link rel="stylesheet" type="text/css" href="../alertifyjs/css/themes/default.css">
+    <script src="../alertifyjs/alertify.js" type="text/javascript"></script>
     <style type="text/css">
         #regiration_form fieldset:not(:first-of-type) {
             display: none;

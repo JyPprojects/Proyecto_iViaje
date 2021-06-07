@@ -1,7 +1,6 @@
 <?php 
     include("../php/sesion.php");
     include("consultas.php");
-    include("editar.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../alertifyjs/css/alertify.css">
+    <link rel="stylesheet" type="text/css" href="../alertifyjs/css/themes/default.css">
+    <script src="../alertifyjs/alertify.js" type="text/javascript"></script>
+    <script src="../librerias/jquery-3.5.1.js"></script>
 </head>
 
 <body>
+<?php include("editar.php"); ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -52,7 +56,6 @@
     <br>
     <br>
     <br>
-
 
 <div class="container">
     <div class="row">
@@ -113,43 +116,43 @@
                                 <div class="form-group text-center">
                                     <?php echo "$error"; ?>
                                 </div>
-                             </form>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="col-md-6 offset-md-3">
-                                <h3 class="text-center">Cambio de Contraseña</h3>
-                                <br>
-                                <form method="post">
-                                    <div class="form-group row">
-                                        <label for="Usuario" class="col-4">Contraseña Antigua:</label>
-                                        <div class="col-8">
-                                            <input type="password" class="form-control" name="contraan">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group row">
-                                        <label for="contrasenia" class="col-4">Contraseña Nueva:</label>
-                                        <div class="col-8">
-                                            <input type="password" class="form-control" name="contranu">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group row">
-                                        <label for="ncontrasenia" class="col-4">Repetir Contraseña:</label>
-                                        <div class="col-8">
-                                            <input type="password" class="form-control" name="contranu2">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group text-center">
-                                        <button class="btn btn-info" name="Actualizarcontra" value="Actualizarcontra">Actualizar</button>
-                                    </div>
-                                    <div class="form-group text-center">
-                                        <?php echo "$errorcontra"; ?>
-                                    </div>
-                                </form>
+                        <h3 class="text-center">Cambio de Contraseña</h3>
+                        <br>
+                        <form method="post">
+                            <div class="form-group row">
+                                <label for="Usuario" class="col-4">Contraseña Antigua:</label>
+                                <div class="col-8">
+                                    <input type="password" class="form-control" name="contraan">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group row">
+                                <label for="contrasenia" class="col-4">Contraseña Nueva:</label>
+                                <div class="col-8">
+                                    <input type="password" class="form-control" name="contranu">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group row">
+                                <label for="ncontrasenia" class="col-4">Repetir Contraseña:</label>
+                                <div class="col-8">
+                                    <input type="password" class="form-control" name="contranu2">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group text-center">
+                                <button class="btn btn-info" name="Actualizarcontra" value="Actualizarcontra">Actualizar</button>
+                            </div>
+                            <div class="form-group text-center">
+                                <?php echo "$errorcontra"; ?>
+                            </div>
+                        </form>
                     </div>
                 </div>
         </div>
