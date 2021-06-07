@@ -35,7 +35,7 @@ $(function(){
         i++;
         
         var usuario=$("#sesion_usuario").text();
-        var fila = '<tr>'+ '<td><p id="p_nuevo'+i+'"></p> <input id="input_nuevo'+i+'" type="text"></td>' + '<td>' +usuario+ '</td>' + '<td> <button type="button" class="btn btn-danger">Eliminar</button> </td>' + '<tr>';
+        var fila = '<tr id="tr_e_nuevo4">'+ '<td><p id="p_nuevo'+i+'"></p> <input id="input_nuevo'+i+'" type="text"></td>' + '<td>' +usuario+ '</td>' + '<td> <button id="e_nuevo4" type="button" class="btn btn-danger">Eliminar</button> </td>' + '<tr>';
         $("#tabla4").append(fila);
 
     });
@@ -71,7 +71,17 @@ $(function(){
 
             $("#eliminar4_"+id3+ "" ).remove();
         }
-    });     
+    });
+    
+    // ELIMINAR INPUTS NUEVOS
+    $("#tabla4").click(function(event)  { 
+        var target = $(event.target); 
+        var id = target.attr("id"); 
+
+        if(id=="e_nuevo4"){
+            $("#tr_e_nuevo4").remove();
+        }  
+    }); 
 }); 
 
 

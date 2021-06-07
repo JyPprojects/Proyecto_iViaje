@@ -25,11 +25,9 @@ $(function(){
                     $("#p_"+id3).text(input);
                     $("#p_"+id3).show(); 
                     
-
                     var enlace="calls_js/update.php?input="+input+"&id_oculto="+id_oculto+"";
                     var enlace2= enlace.replace(/ /g, "_");
                     $("#resultado").load(enlace2);
-
 
                 });                                                        
             }       
@@ -40,7 +38,7 @@ $(function(){
         i++;
         
         var usuario=$("#sesion_usuario").text();
-        var fila = '<tr>'+ '<td><p id="p_nuevo'+i+'"></p> <input id="input_nuevo'+i+'" type="text"></td>' + '<td>' +usuario+ '</td>' + '<td> <button type="button" class="btn btn-danger">Eliminar</button> </td>' + '<tr>';
+        var fila = '<tr id="tr_e_nuevo" >'+ '<td><p id="p_nuevo'+i+'"></p> <input id="input_nuevo'+i+'" type="text"></td>' + '<td>' +usuario+ '</td>' + '<td> <button id="e_nuevo" type="button" class="btn btn-danger">Eliminar</button> </td>' + '<tr>';
         $("#tabla").append(fila);
 
     });
@@ -77,7 +75,18 @@ $(function(){
             $("#eliminar_"+id3+ "" ).remove();
         }
     });     
+
+    // ELIMINAR INPUTS NUEVOS
+    $("#tabla").click(function(event)  { 
+        var target = $(event.target); 
+        var id = target.attr("id"); 
+
+        if(id=="e_nuevo"){
+            $("#tr_e_nuevo").remove();
+        }  
+    }); 
 }); 
+
 
 
 
