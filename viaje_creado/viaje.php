@@ -224,6 +224,8 @@ error_reporting(0);
           <h3>Tipo de alojamiento: <?php echo $info_estancia[1];?></h1> </h3>
           <h3>Direccion: <?php echo $info_estancia[2];?></h1> </h3>
           <h3>Telefono: <?php echo $info_estancia[3];?></h1> </h3>
+
+          <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=<?php echo $info_estancia[2]; ?>&key=AIzaSyASd10WQhVts73MLA5fmb32XP_433pAios" allowfullscreen></iframe>
     </div>
 
     <div class="tab-pane fade" id="participantes" role="tabpanel" aria-labelledby="participantes-tab">
