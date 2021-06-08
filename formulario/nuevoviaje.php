@@ -54,9 +54,7 @@ if (!empty($nviaje && $fecha_ini && $fecha_fin && $bote)){
             $insertar_viaje2="INSERT INTO viajes_usuario (id_viaje, id_usuario) VALUES ('$_SESSION[id_viaje]', '$_SESSION[id_usuario]')";
             mysqli_query($conexion, $insertar_viaje2);
 
-            //Generar URL
-            echo "Esta es la dirección del viaje: "; echo "<br>";
-            echo "<a href='../viaje_creado/viaje.php'>Localhost:8080/Proyecto_iViaje/viaje_creado/viaje_creado.php/$_SESSION[id_viaje]</a>";
+            header("Location: ../Index.php?viaje=$_POST[nviaje]");
         }
 
         else{
