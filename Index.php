@@ -30,7 +30,7 @@ include("php/sesion.php");
 if (isset($_GET['viaje'])) {?>
   <div id="Modal" class="modal fade" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+    <div style="margin: 15px;" class="modal-content">
       <div class="modal-header">
         <h3 style="font-weight: 600;" class="modal-title">¡VIAJE CREADO CON EXITO!</h3>
       </div>
