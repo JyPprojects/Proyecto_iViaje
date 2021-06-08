@@ -4,7 +4,7 @@ include("../php/conexion.php");
 include("../php/sesion.php");
 include("../php/funciones.php");
 
-$sql_info_viaje="SELECT nombre_viaje, fecha_inicio, fecha_fin, bote FROM viajes INNER JOIN viajes_usuario on viajes.idviaje=viajes_usuario.id_viaje WHERE viajes.idviaje=$_SESSION[id_viaje]";
+$sql_info_viaje="SELECT nombre_viaje, pais, fecha_inicio, fecha_fin, bote FROM viajes INNER JOIN viajes_usuario on viajes.idviaje=viajes_usuario.id_viaje WHERE viajes.idviaje=$_SESSION[id_viaje]";
 $info_viaje0=mysqli_query($conexion, $sql_info_viaje);
 $info_viaje=mysqli_fetch_row($info_viaje0);
 $info_transporte=select_query("*", "transporte", "id_viaje", "$_SESSION[id_viaje]");

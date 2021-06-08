@@ -10,6 +10,7 @@ if (isset($_POST["enviar"])){
  
 //PASO 1
 $nviaje=$_POST["nviaje"];
+$pais=$_POST["pais"];
 $fecha_ini=$_POST["fecha_ini"];
 $fecha_fin=$_POST["fecha_fin"];
 $bote=$_POST["bote"];
@@ -40,7 +41,7 @@ if (!empty($nviaje && $fecha_ini && $fecha_fin && $bote)){
         if(empty($viaje)){
 
             //INSERT PASO 1
-            $insertar_viaje="INSERT INTO viajes (id_usuario, nombre_viaje, fecha_inicio, fecha_fin, bote) VALUES ('$_SESSION[id_usuario]', '$nviaje', '$fecha_ini', '$fecha_fin', '$bote')";
+            $insertar_viaje="INSERT INTO viajes (id_usuario, nombre_viaje, pais, fecha_inicio, fecha_fin, bote) VALUES ('$_SESSION[id_usuario]', '$nviaje', '$pais', '$fecha_ini', '$fecha_fin', '$bote')";
             mysqli_query($conexion, $insertar_viaje);
 
             $sql="SELECT idviaje FROM viajes WHERE id_usuario=$_SESSION[id_usuario]";

@@ -82,9 +82,10 @@ error_reporting(0);
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <h1>Viaje: <?php echo $info_viaje[0];?></h1>
-      <h1>Fecha de inicio: <?php echo $info_viaje[1];?></h1>
-      <h1>Fecha fin: <?php echo $info_viaje[2];?></h1>
-      <h1>Bote: <?php echo $info_viaje[3];?>€</h1>
+      <h1>Pais: <?php echo $info_viaje[1];?></h1>
+      <h1>Fecha de inicio: <?php echo $info_viaje[2];?></h1>
+      <h1>Fecha fin: <?php echo $info_viaje[3];?></h1>
+      <h1>Bote: <?php echo $info_viaje[4];?>€</h1>
     </div>
 
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
