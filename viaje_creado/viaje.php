@@ -79,126 +79,136 @@ error_reporting(0);
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <h1>Viaje: <?php echo $info_viaje[0];?></h1>
-          <h1>Fecha de inicio: <?php echo $info_viaje[1];?></h1>
-          <h1>Fecha fin: <?php echo $info_viaje[2];?></h1>
-          <h1>Bote: <?php echo $info_viaje[3];?>€</h1>
-    </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <h3>Comida</h3>
-              <table class="table table-hover table-dark" id="tabla">
-                <tr>
-                    <th>Comida</th>
-                    <th>Usuario</th>
-                </tr>  
-          <p id="sesion_usuario"> <?php echo $_SESSION["usuario"];?> </p>
-          <p id="sesion_idusuario"> <?php echo $_SESSION["id_usuario"];?> </p>
-          <p id="sesion_idviaje"> <?php echo $_SESSION["id_viaje"];?> </p>
-<?php 
-$k=1;
-while($array=mysqli_fetch_array($query)){
-    $q_comida="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array[id_usuario]";
-    $q_comida2=mysqli_query($conexion, $q_comida);
-    $a_comida=mysqli_fetch_row($q_comida2);
-?>
-<div id="resultado"></div>
 
-    <tr id="eliminar_<?php echo $k;?>">
-        <td><p class="p_viaje" id="p_<?php echo $k; ?>"><?php echo $array["necesidad_viaje"];?></p><input type="text" id="i_<?php echo $k; ?>"  class="input_viaje" value="<?php echo $array["necesidad_viaje"];?>"></td>
-        <td><p id="u_<?php echo $k; ?>"><?php echo $a_comida[0];?></p></td>
-        <td><p class="p_oculto" id="id_oculto_<?php echo $k; ?>"><?php echo $array["id_necesidad_viaje"];?></p></td>
-        <td><button id="eliminar_<?php echo $k;?>" type="button" class="btn btn-danger delete">Eliminar</button></td>
-    </tr>
-<?php
-$k++;
-}
-?>
-              </table>
-              <button class="btn btn-primary" id="añadir">Añadir</button>
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <h1>Viaje: <?php echo $info_viaje[0];?></h1>
+      <h1>Fecha de inicio: <?php echo $info_viaje[1];?></h1>
+      <h1>Fecha fin: <?php echo $info_viaje[2];?></h1>
+      <h1>Bote: <?php echo $info_viaje[3];?>€</h1>
+    </div>
+
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+      
+      <h3>Comida</h3>
+      <table class="table table-striped table-hover" id="tabla">
+        <tr>
+          <th>Comida</th>
+          <th>Usuario</th>
+
+        </tr>  
+        <p id="sesion_usuario"> <?php echo $_SESSION["usuario"];?> </p>
+        <p id="sesion_idusuario"> <?php echo $_SESSION["id_usuario"];?> </p>
+        <p id="sesion_idviaje"> <?php echo $_SESSION["id_viaje"];?> </p>
+
+        <?php 
+          $k=1;
+          while($array=mysqli_fetch_array($query)){
+            $q_comida="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array[id_usuario]";
+            $q_comida2=mysqli_query($conexion, $q_comida);
+            $a_comida=mysqli_fetch_row($q_comida2);
+        ?>
+        <div id="resultado"></div>
+          <tr id="eliminar_<?php echo $k;?>">
+            <td><p class="p_viaje" id="p_<?php echo $k; ?>"><?php echo $array["necesidad_viaje"];?></p><input type="text" id="i_<?php echo $k; ?>"  class="input_viaje" value="<?php echo $array["necesidad_viaje"];?>"></td>
+            <td><p id="u_<?php echo $k; ?>"><?php echo $a_comida[0];?></p></td>
+            <td><p class="p_oculto" id="id_oculto_<?php echo $k; ?>"><?php echo $array["id_necesidad_viaje"];?></p></td>
+            <td><button id="eliminar_<?php echo $k;?>" type="button" class="btn btn-danger delete">Eliminar</button></td>
+          </tr>
+        <?php
+          $k++;
+          }
+        ?>
+
+      </table>
+      <button class="btn btn-primary" id="añadir">Añadir</button>
           
 
-              <h3>Bebida</h3>
-              <table class="table table-hover table-dark"  id="tabla2">
-                  <tr>
-                      <th>Bebida</th>
-                      <th>Usuario</th>
-                  </tr>
-<?php 
-$x=1;
-while($array2=mysqli_fetch_array($query2)){
-  $q_bebida="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array2[id_usuario]";
-  $q_bebida2=mysqli_query($conexion, $q_bebida);
-  $a_bebida=mysqli_fetch_row($q_bebida2);
-?>
-<div id="resultado2"></div>      
-        <tr id="eliminar2_<?php echo $x;?>">
+      <h3>Bebida</h3>
+      <table class="table table-striped table-hover"  id="tabla2">
+        <tr>
+          <th>Bebida</th>
+          <th>Usuario</th>
+        </tr>
+
+        <?php 
+          $x=1;
+          while($array2=mysqli_fetch_array($query2)){
+            $q_bebida="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array2[id_usuario]";
+            $q_bebida2=mysqli_query($conexion, $q_bebida);
+            $a_bebida=mysqli_fetch_row($q_bebida2);
+        ?>
+        <div id="resultado2"></div>      
+          <tr id="eliminar2_<?php echo $x;?>">
             <td><p class="p_viaje2" id="p2_<?php echo $x; ?>"><?php echo $array2["necesidad_viaje"];?></p><input type="text" id="i2_<?php echo $x; ?>"  class="input_viaje2" value="<?php echo $array2["necesidad_viaje"];?>"></td>
             <td><p id="u2_<?php echo $x; ?>"><?php echo $a_bebida[0];?></p></td>
             <td><p class="p_oculto2" id="id_oculto2_<?php echo $x; ?>"><?php echo $array2["id_necesidad_viaje"];?></p></td>
             <td><button id="eliminar2_<?php echo $x; ?>" type="button" class="btn btn-danger delete2">Eliminar</button></td>
-        </tr>
-<?php
-$x++;
-}
-?>
-              </table>
-              <button class="btn btn-primary" id="añadir2">Añadir</button>
+          </tr>
+        <?php
+          $x++;
+          }
+        ?>
+
+      </table>
+      <button class="btn btn-primary" id="añadir2">Añadir</button>
               
-          <h3>Utensilios</h3>
-              <table class="table table-hover table-dark" id="tabla3">
-                  <tr>
-                      <th>Utensilio</th>
-                      <th>Usuario</th>
-                  </tr>
-<?php 
-$y=1;
-while($array3=mysqli_fetch_array($query3)){
-  $q_utensilios="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array3[id_usuario]";
-  $q_utensilios2=mysqli_query($conexion, $q_utensilios);
-  $a_utensilios=mysqli_fetch_row($q_utensilios2);
-?>
-<div id="resultado3"></div>      
-        <tr id="eliminar3_<?php echo $y;?>">
+      <h3>Utensilios</h3>
+      <table class="table table-striped table-hover" id="tabla3">
+        <tr>
+          <th>Utensilio</th>
+          <th>Usuario</th>
+        </tr>
+        <?php 
+          $y=1;
+          while($array3=mysqli_fetch_array($query3)){
+            $q_utensilios="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array3[id_usuario]";
+            $q_utensilios2=mysqli_query($conexion, $q_utensilios);
+            $a_utensilios=mysqli_fetch_row($q_utensilios2);
+        ?>
+        <div id="resultado3"></div>      
+          <tr id="eliminar3_<?php echo $y;?>">
             <td><p class="p_viaje3" id="p3_<?php echo $y; ?>"><?php echo $array3["necesidad_viaje"];?></p><input type="text" id="i3_<?php echo $y; ?>"  class="input_viaje3" value="<?php echo $array3["necesidad_viaje"];?>"></td>
             <td><p id="u3_<?php echo $y; ?>"><?php echo $a_utensilios[0];?></p></td>
             <td><p class="p_oculto3" id="id_oculto3_<?php echo $y; ?>"><?php echo $array3["id_necesidad_viaje"];?></p></td>
             <td><button id="eliminar3_<?php echo $y; ?>" type="button" class="btn btn-danger delete3">Eliminar</button></td>
-        </tr>
-<?php
-$y++;
-}
-?>
-            </table>
-            <button class="btn btn-primary" id="añadir3">Añadir</button>
+          </tr>
+        <?php
+          $y++;
+          }
+        ?>
 
-          <h3>General</h3>
-            <table class="table table-hover table-dark" id="tabla4">
-                    <tr>
-                        <th>Item</th>
-                        <th>Usuario</th>
-                    </tr>
-                    <?php 
-$z=1;
-while($array4=mysqli_fetch_array($query4)){
-  $q_general="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array4[id_usuario]";
-  $q_general2=mysqli_query($conexion, $q_general);
-  $a_general=mysqli_fetch_row($q_general2);
-?>
-<div id="resultado4"></div>      
-        <tr id="eliminar4_<?php echo $z;?>">
+      </table>
+      <button class="btn btn-primary" id="añadir3">Añadir</button>
+
+      <h3>General</h3>
+      <table class="table table-striped table-hover" id="tabla4">
+        <tr>
+          <th>Item</th>
+          <th>Usuario</th>
+        </tr>
+        <?php 
+          $z=1;
+          while($array4=mysqli_fetch_array($query4)){
+            $q_general="SELECT usuario FROM datosusuario INNER JOIN necesidades_viaje ON datosusuario.id_usuario = necesidades_viaje.id_usuario WHERE necesidades_viaje.id_usuario = $array4[id_usuario]";
+            $q_general2=mysqli_query($conexion, $q_general);
+            $a_general=mysqli_fetch_row($q_general2);
+        ?>
+        <div id="resultado4"></div>      
+          <tr id="eliminar4_<?php echo $z;?>">
             <td><p class="p_viaje4" id="p4_<?php echo $z; ?>"><?php echo $array4["necesidad_viaje"];?></p><input type="text" id="i4_<?php echo $z; ?>"  class="input_viaje4" value="<?php echo $array4["necesidad_viaje"];?>"></td>
             <td><p id="u4_<?php echo $z; ?>"><?php echo $a_general[0];?></p></td>
             <td><p class="p_oculto4" id="id_oculto4_<?php echo $z; ?>"><?php echo $array4["id_necesidad_viaje"];?></p></td>
             <td><button id="eliminar4_<?php echo $z; ?>" type="button" class="btn btn-danger delete4">Eliminar</button></td>
-        </tr>
-<?php
-$z++;
-}
-?>
-            </table>
-            <button class="btn btn-primary" id="añadir4">Añadir</button>
-          <br><hr>
+          </tr>
+        <?php
+          $z++;
+          }
+        ?>
+
+      </table>
+      <button class="btn btn-primary" id="añadir4">Añadir</button>
+      <br><br>
     </div>
 
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
