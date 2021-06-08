@@ -2,6 +2,8 @@
 include("../php/conexion.php");
 include("../php/sesion.php");
 $error="";
+$sql6="SELECT usuario FROM datosusuario INNER JOIN viajes_usuario on datosusuario.id_usuario=viajes_usuario.id_usuario WHERE viajes_usuario.id_viaje=$_SESSION[id_viaje]";
+$query6=mysqli_query($conexion, $sql6);
 if (isset($_POST['name'])) {
 
     $usu_invitado=$_POST['name'];
@@ -31,6 +33,10 @@ if (isset($_POST['name'])) {
             else {
                 $invitar_usu="INSERT INTO viajes_usuario (id_viaje, id_usuario) VALUES ('$_SESSION[id_viaje]', '$comprobar_usu[0]')";
                 mysqli_query($conexion, $invitar_usu);
+
+                $sql6="SELECT usuario FROM datosusuario INNER JOIN viajes_usuario on datosusuario.id_usuario=viajes_usuario.id_usuario WHERE viajes_usuario.id_viaje=$_SESSION[id_viaje]";
+                $query6=mysqli_query($conexion, $sql6);
+
             }
              
         }
@@ -42,5 +48,11 @@ if (isset($_POST['name'])) {
     
 }
 echo $error;
+echo "<br>";
+while($array6=mysqli_fetch_array($query6)){
+    echo "<span class='hola'>$array6[0]</span>";
+    echo "<br>";
+}
+
 
 ?>

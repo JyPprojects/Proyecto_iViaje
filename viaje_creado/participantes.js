@@ -1,12 +1,7 @@
 // PARTICIPANTES
 function clickButton(){
-   //var error="";
+
    var name=document.getElementById('name').value;
-   var error=$('#msg').html();
-   console.log(error);
-   // setTimeout(function() {
-   //     error=$('#msg').html();
-   // }, 10);
    
    $.ajax({
          type:"post",
@@ -21,17 +16,15 @@ function clickButton(){
             $('#msg').html(html);
          }
    });
-   
-   if(error=""){
-      $("#part").append("<span>"+name+"</span><br>");
-   }
-   else{
-     
-   }
-   
-   console.log(name);
 
    return false;
 
-
 }
+
+$(function(){
+
+$("#enviar").on("click", function(){
+   $("#part").remove();
+});
+
+});

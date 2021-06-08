@@ -1,7 +1,7 @@
 <?php
 include("viaje_creado.php");
-include("participantes.php");
-error_reporting(0);
+
+error_reporting();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -232,16 +232,13 @@ error_reporting(0);
     <div id="resultado5"> 
       <form method="post" action="">
         <input type="text" name="usu_invitado" id="name">
-        <input type="submit" value="Invitar" name="Invitar" onclick="return clickButton();">
+        <input id="enviar" type="submit" value="Invitar" name="Invitar" onclick="return clickButton();">
       </form>
       <p id="msg"></p>
 
       <div id="part">
       <?php  
-        while($array6=mysqli_fetch_array($query6)){
-          echo "$array6[0]";
-          echo "<br>";
-      }
+      include("participantes.php");
       ?>
       </div>
       </div>     
