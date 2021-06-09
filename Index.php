@@ -55,13 +55,13 @@ if (isset($_GET['viaje'])) {?>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+          <a class="nav-link active" aria-current="page" target="_blank" href="https://es.stackoverflow.com/">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Acerca de</a>
+          <a class="nav-link" target="_blank" href="https://trello.com/b/MDw6jnOn/finalizar-proyecto">Acerca de</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contactanos</a>
+          <a class="nav-link" target="_blank" href="https://github.com/JyPprojects/Proyecto_iViaje">Contactanos</a>
         </li>
       </ul>
       <ul class="navbar-nav me-righ mb-2 mb-lg-0" style="margin-right: 5%;">
