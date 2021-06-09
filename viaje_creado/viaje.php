@@ -1,6 +1,6 @@
 <?php
 include("viaje_creado.php");
-
+include("pdf.php");
 error_reporting();
 ?>
 <!DOCTYPE html>
@@ -90,6 +90,11 @@ error_reporting();
       <h1>Fecha fin: <?php echo $info_viaje[3];?></h1>
       <h1>Bote: <?php echo $info_viaje[4];?>€</h1>
     </div>
+
+    <?php ?>
+    <form action="" method="post">
+          <input type="submit" name="desc_pdf">
+    </form>
 
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <br>
