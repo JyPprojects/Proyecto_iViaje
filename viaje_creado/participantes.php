@@ -14,11 +14,9 @@ if (isset($_POST['name'])) {
         $resultado2=mysqli_query($conexion, $consulta2);
         $comprobar_usu=mysqli_fetch_row($resultado2);
 
-        if(!$comprobar_usu==TRUE){
-
-            $error="El usuario no existe";
-
-        }
+        if(!$comprobar_usu==TRUE){?>
+            <script>alertify.error('El usuario no existe');</script>
+        <?php }
             
         else{
 
@@ -26,25 +24,25 @@ if (isset($_POST['name'])) {
             $resultado3=mysqli_query($conexion, $consulta3);
             $comprobar_usu2=mysqli_fetch_row($resultado3);
 
-            if ($comprobar_usu2==TRUE) {
-                $error="El usuario ya esta participando en otro viaje";
-            }
+            if ($comprobar_usu2==TRUE) {?>
+                <script>alertify.error('El usuario ya está participando en in viaje');</script>
+            <?php }
             
             else {
                 $invitar_usu="INSERT INTO viajes_usuario (id_viaje, id_usuario) VALUES ('$_SESSION[id_viaje]', '$comprobar_usu[0]')";
                 mysqli_query($conexion, $invitar_usu);
 
                 $sql6="SELECT usuario FROM datosusuario INNER JOIN viajes_usuario on datosusuario.id_usuario=viajes_usuario.id_usuario WHERE viajes_usuario.id_viaje=$_SESSION[id_viaje]";
-                $query6=mysqli_query($conexion, $sql6);
+                $query6=mysqli_query($conexion, $sql6);?>
 
-            }
+                <script>alertify.success('Usuario añadido a tu viaje con exito');</script>
+            <?php }
              
         }
     }
-    else{
-
-        $error="No puedes dejar campos vacíos";
-    }
+    else{?>
+        <script>alertify.error('No se pueden dejar campos vacíos');</script>
+    <?php }
     
 }
 echo $error;
