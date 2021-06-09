@@ -154,3 +154,12 @@ footer{
     color: black;
     text-decoration: none;
 }
+
+.Efecto{
+    transition: all 0.2s linear;
+}
+
+.Efecto:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}

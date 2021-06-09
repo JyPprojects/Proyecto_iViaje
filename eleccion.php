@@ -17,7 +17,7 @@ $eleccion2=mysqli_fetch_row($resultado2);
     if(!$resultado1->num_rows == 1){
 ?>
 
-        <article class="sidebar1">
+        <article class="sidebar1 Efecto">
             <a href="formulario/formulario.php?nuevoviaje='nuevoviaje'"><img src="menu_post-login/Imagenes/mas.png" alt="Error al cargar"> 
             <h2>Nuevo Viaje</h2></a>
         </article>
@@ -37,7 +37,7 @@ $eleccion2=mysqli_fetch_row($resultado2);
             <h2 class="letra">Nuevo Viaje</h2>
         </article>
 
-        <article class="sidebar2">
+        <article class="sidebar2 Efecto">
             <a href="viaje_creado/viaje.php"><img src="menu_post-login/Imagenes/caravana1.png" alt="Error al cargar">
             <h2><?php echo "$eleccion2[0]"; ?></h2></a>
         </article>
