@@ -62,7 +62,7 @@ if(isset($_POST["desc_pdf"])){
     ob_end_clean();
     // Close and output PDF document
     // This method has several options, check the source code documentation for more information.
-    $pdf->Output("Información_.pdf", 'I');
+    $pdf->Output("Información_.pdf", 'D');
 
 }
 

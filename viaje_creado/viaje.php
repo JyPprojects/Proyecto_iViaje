@@ -89,12 +89,13 @@ error_reporting();
       <h1>Fecha de inicio: <?php echo $info_viaje[2];?></h1>
       <h1>Fecha fin: <?php echo $info_viaje[3];?></h1>
       <h1>Bote: <?php echo $info_viaje[4];?>€</h1>
-    </div>
 
-    <?php ?>
+      <!-- AQUI JUANANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN -->
     <form action="" method="post">
           <input type="submit" name="desc_pdf">
     </form>
+    <!-- AQUI JUANANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN -->
+    </div>
 
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <br>
