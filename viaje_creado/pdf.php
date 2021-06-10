@@ -29,31 +29,20 @@ if(isset($_POST["desc_pdf"])){
     $html = <<<EOD
     <br><br><br><br>
     <h1><u>INFORMACIÓN DEL VIAJE</u></h1>
-
-    <h2>Nombre viaje:</h2>
-    <h2>Pais:</h2>
-    <h2>Duración del viaje:</h2>
-    <h2>Necesidades:</h2>
-
-
+    <h2>Nombre viaje: $info_viaje[0]</h2>
+    <h2>Pais: $info_viaje[1]</h2>
+    <h2>Inicio del viaje: $info_viaje[2]</h2>
+    <h2>Final del viaje: $info_viaje[3]</h2>
+    <h2>Duración del viaje: $dias</h2>
     <h1><u>TRANSPORTE</u></h1>
-
-    <h2>Medio de transporte:</h2>
+    <h2>Medio de transporte: $info_transporte[1]</h2>
     <h2>Cantidad:</h2>
     <h2>Tipo de Combustible:</h2>
-
     <h1><u>ALOJAMIENTO</u></h1>
-
-    <h2>Tipo de alojamiento:</h2>
-    <h2>Direccion:</h2>
-    <h2>Telefono Alojamiento:</h2>
-
-
+    <h2>Tipo de alojamiento: $info_estancia[1]</h2>
+    <h2>Direccion: $info_estancia[2]</h2>
+    <h2>Telefono Alojamiento: $info_estancia[3]</h2>
     <h1><u>PARTICIPANTES</u></h1>
-
-    <h2></h2>
-
-
     EOD;
 
     // Print text using writeHTMLCell()
@@ -62,7 +51,7 @@ if(isset($_POST["desc_pdf"])){
     ob_end_clean();
     // Close and output PDF document
     // This method has several options, check the source code documentation for more information.
-    $pdf->Output("Información_.pdf", 'D');
+    $pdf->Output("Resumen_$info_viaje[0].pdf", 'i');
 
 }
 
