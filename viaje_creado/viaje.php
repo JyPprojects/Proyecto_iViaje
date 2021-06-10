@@ -1,7 +1,7 @@
 <?php
 include("viaje_creado.php");
 include("pdf.php");
-error_reporting();
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -84,17 +84,26 @@ error_reporting();
   <div class="tab-content" id="myTabContent">
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      
+      <?php 
+        $fecha1= new DateTime($info_viaje[2]);
+        $fecha2= new DateTime($info_viaje[3]);
+        $diff = $fecha1->diff($fecha2);
+        $dias= $diff->days+1 . ' dias';
+      ?>
+
       <h1>Viaje: <?php echo $info_viaje[0];?></h1>
       <h1>Pais: <?php echo $info_viaje[1];?></h1>
       <h1>Fecha de inicio: <?php echo $info_viaje[2];?></h1>
       <h1>Fecha fin: <?php echo $info_viaje[3];?></h1>
+      <h1>Duracion del viaje: <?php echo $dias?></h1>
       <h1>Bote: <?php echo $info_viaje[4];?>€</h1>
 
-      <!-- AQUI JUANANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN -->
+
     <form action="" method="post">
           <input type="submit" name="desc_pdf">
     </form>
-    <!-- AQUI JUANANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN -->
+
     </div>
 
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -275,23 +284,25 @@ error_reporting();
           <h3>Direccion: <?php echo $info_estancia[2];?></h1> </h3>
           <h3>Telefono: <?php echo $info_estancia[3];?></h1> </h3>
 
-          <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=<?php echo $info_estancia[2]; ?>&key=AIzaSyASd10WQhVts73MLA5fmb32XP_433pAios" allowfullscreen></iframe>
+          <iframe height="350" frameborder="0" style="width: 100%;clear: both;position: fixed;bottom: 0;z-index:2000;" src="https://www.google.com/maps/embed/v1/place?q=<?php echo $info_estancia[2]; ?>&key=AIzaSyASd10WQhVts73MLA5fmb32XP_433pAios" allowfullscreen></iframe>
     </div>
 
     <div class="tab-pane fade" id="participantes" role="tabpanel" aria-labelledby="participantes-tab">
-    <div id="resultado5"> 
-      <form method="post" action="">
-        <input type="text" name="usu_invitado" id="name">
-        <input id="enviar" type="submit" value="Invitar" name="Invitar" onclick="return clickButton();">
-      </form>
-      <p id="msg"></p>
 
+    <div id="resultado5" style="margin: 40%; margin-bottom: 10px; margin-top: 50px;"> 
+      
+      <p id="msg"></p>
       <div id="part">
       <?php  
       include("participantes.php");
       ?>
       </div>
-      </div>     
+      <form method="post" action="">
+        <input type="text" name="usu_invitado" id="name">
+        <input id="enviar" type="submit" value="Invitar" name="Invitar" onclick="return clickButton();">
+      </form>
+    </div>     
+    
     </div>
   </div>
   </div>
