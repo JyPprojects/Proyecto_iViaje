@@ -127,13 +127,13 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="cantidad">Cantidad de Coches</label>
-                    <input id="c_coches" type="number" class="form-control" name="cantidad_coche" placeholder="Cantidad de Coches">
+                    <label class="cantidad" for="cantidad">Cantidad de Coches</label>
+                    <input id="c_coches" type="number" class="form-control cantidad" name="cantidad_coche" placeholder="Cantidad de Coches">
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="combustible">Combustible</label>
-                    <select id="combustible" name="combustible" class="form-control">
+                    <label  class="combustible2" for="combustible">Combustible</label>
+                    <select id="combustible" name="combustible" class="form-control combustible2">
                         <option selected value=""> Elige una opción </option>
                         <option value="Diesel">Diesel</option> 
                         <option value="Gasolina">Gasolina</option> 
