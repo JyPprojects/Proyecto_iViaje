@@ -1,6 +1,12 @@
 <?php
 require_once("../librerias/TCPDF/tcpdf.php");
 
+//Sacamos los dias de duracion del viaje
+
+$fecha1= new DateTime($info_viaje[2]);
+        $fecha2= new DateTime($info_viaje[3]);
+        $diff = $fecha1->diff($fecha2);
+        $dias= $diff->days+1 . ' dias';
 
 if(isset($_POST["desc_pdf"])){
 
@@ -36,8 +42,8 @@ if(isset($_POST["desc_pdf"])){
     <h2>Duración del viaje: $dias</h2>
     <h1><u>TRANSPORTE</u></h1>
     <h2>Medio de transporte: $info_transporte[1]</h2>
-    <h2>Cantidad:</h2>
-    <h2>Tipo de Combustible:</h2>
+    <h2>Cantidad: $info_transporte[2]</h2>
+    <h2>Tipo de Combustible: $info_transporte[3]</h2>
     <h1><u>ALOJAMIENTO</u></h1>
     <h2>Tipo de alojamiento: $info_estancia[1]</h2>
     <h2>Direccion: $info_estancia[2]</h2>

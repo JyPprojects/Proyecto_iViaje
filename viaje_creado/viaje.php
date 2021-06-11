@@ -84,13 +84,6 @@ error_reporting(0);
   <div class="tab-content" id="myTabContent">
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      
-      <?php 
-        $fecha1= new DateTime($info_viaje[2]);
-        $fecha2= new DateTime($info_viaje[3]);
-        $diff = $fecha1->diff($fecha2);
-        $dias= $diff->days+1 . ' dias';
-      ?>
 
       <h1>Viaje: <?php echo $info_viaje[0];?></h1>
       <h1>Pais: <?php echo $info_viaje[1];?></h1>
