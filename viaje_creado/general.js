@@ -35,7 +35,7 @@ $(function(){
         i++;
         
         var usuario=$("#sesion_usuario").text();
-        var fila = '<tr id="tr_e_nuevo4">'+ '<td><p id="p_nuevo'+i+'"></p> <input id="input_nuevo'+i+'" type="text"></td>' + '<td>' +usuario+ '</td>' + '<td> <button id="e_nuevo4" type="button" class="btn btn-danger">Eliminar</button> </td>' + '<tr>';
+        var fila = '<tr id="tr_e_nuevo4">'+ '<td><p id="p_nuevo4'+i+'"></p> <input id="input_nuevo4'+i+'" type="text"></td>' + '<td>' +usuario+ '</td>' + '<td> <button id="e_nuevo4" type="button" class="btn btn-danger">Eliminar</button> </td>' + '<tr>';
         $("#tabla4").append(fila);
 
     });
@@ -44,11 +44,11 @@ $(function(){
         var id_usuario=$("#sesion_idusuario").text();  
         var id_viaje=$("#sesion_idviaje").text();   
     
-        $("#input_nuevo"+i).on("blur", function(){
-            var i_nuevo2 = $("#input_nuevo"+i).val();
-            $("#p_nuevo"+i).text(i_nuevo2);
-            $("#input_nuevo"+i).hide();
-            $("#p_nuevo"+i).show();
+        $("#input_nuevo4"+i).on("blur", function(){
+            var i_nuevo2 = $("#input_nuevo4"+i).val();
+            $("#p_nuevo4"+i).text(i_nuevo2);
+            $("#input_nuevo4"+i).hide();
+            $("#p_nuevo4"+i).show();
             
             var enlace="calls_js/insert_general.php?input_nuevo="+i_nuevo2+"&id_viaje="+id_viaje+"&usuario_nuevo="+id_usuario+"";
             var enlace2= enlace.replace(/ /g, "_");
