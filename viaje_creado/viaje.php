@@ -83,7 +83,7 @@ error_reporting(0);
   </ul>
   <div class="tab-content" id="myTabContent">
 
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div style="margin: 5px;" class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
       <h1>Viaje: <?php echo $info_viaje[0];?></h1>
       <h1>Pais: <?php echo $info_viaje[1];?></h1>
@@ -94,7 +94,7 @@ error_reporting(0);
 
 
     <form action="" method="post">
-          <input type="submit" name="desc_pdf">
+          <input class="btn btn-info" type="submit" value="Visualizar Resumen PDF" name="desc_pdf">
     </form>
 
     </div>
@@ -264,14 +264,14 @@ error_reporting(0);
       </div>
           
 
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <div style="margin: 5px;" class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
           <h3>Medio de transporte: <?php echo $info_transporte[1];?></h1> </h3>
           <h3>Cantidad: <?php echo $info_transporte[2];?></h1> </h3>
           <h3>Tipo de Combustible: <?php echo $info_transporte[3];?></h1> </h3>
     </div>
 
-    <div class="tab-pane fade" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
+    <div style="margin: 5px;" class="tab-pane fade" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
 
           <h3>Tipo de alojamiento: <?php echo $info_estancia[1];?></h1> </h3>
           <h3>Direccion: <?php echo $info_estancia[2];?></h1> </h3>
