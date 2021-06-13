@@ -1,7 +1,6 @@
 <?php
 include("viaje_creado.php");
 include("pdf.php");
-error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -94,7 +93,8 @@ error_reporting(0);
 
 
     <form action="" method="post">
-          <input class="btn btn-info" type="submit" value="Visualizar Resumen PDF" name="desc_pdf">
+      <input class="btn btn-info" type="submit" value="Visualizar Resumen PDF" name="ver_pdf">
+      <input class="btn btn-outline-danger" type="submit" value="Descargar resumen PDF" name="desc_pdf">
     </form>
 
     </div>
