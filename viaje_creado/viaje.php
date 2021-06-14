@@ -84,12 +84,12 @@ include("pdf.php");
 
     <div style="margin: 5px;" class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-      <h1>Viaje: <?php echo $info_viaje[0];?></h1>
-      <h1>Pais: <?php echo $info_viaje[1];?></h1>
-      <h1>Fecha de inicio: <?php echo $info_viaje[2];?></h1>
-      <h1>Fecha fin: <?php echo $info_viaje[3];?></h1>
-      <h1>Duracion del viaje: <?php echo $dias?></h1>
-      <h1>Bote: <?php echo $info_viaje[4];?>€</h1>
+      <h1>Viaje: <span style="font-weight: normal;"><?php echo $info_viaje[0];?></span></h1>
+      <h1>Pais: <span style="font-weight: normal;"><?php echo $info_viaje[1];?></span></h1>
+      <h1>Fecha de inicio: <span style="font-weight: normal;"><?php echo $info_viaje[2];?></span></h1>
+      <h1>Fecha fin: <span style="font-weight: normal;"><?php echo $info_viaje[3];?></span></h1>
+      <h1>Duracion del viaje: <span style="font-weight: normal;"><?php echo $dias?></span></h1>
+      <h1>Bote: <span style="font-weight: normal;"><?php echo $info_viaje[4];?>€</span></h1>
 
 
     <form action="" method="post">
@@ -266,16 +266,16 @@ include("pdf.php");
 
     <div style="margin: 5px;" class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
-          <h3>Medio de transporte: <?php echo $info_transporte[1];?></h1> </h3>
-          <h3>Cantidad: <?php echo $info_transporte[2];?></h1> </h3>
-          <h3>Tipo de Combustible: <?php echo $info_transporte[3];?></h1> </h3>
+          <h2>Medio de transporte: <span style="font-weight: normal;"><?php echo $info_transporte[1];?></span></h2>
+          <h2>Cantidad: <span style="font-weight: normal;"><?php echo $info_transporte[2];?></span></h2>
+          <h2>Tipo de Combustible: <span style="font-weight: normal;"><?php echo $info_transporte[3];?></span></h2>
     </div>
 
     <div style="margin: 5px;" class="tab-pane fade" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
 
-          <h3>Tipo de alojamiento: <?php echo $info_estancia[1];?></h1> </h3>
-          <h3>Direccion: <?php echo $info_estancia[2];?></h1> </h3>
-          <h3>Telefono: <?php echo $info_estancia[3];?></h1> </h3>
+          <h2>Tipo de alojamiento: <span style="font-weight: normal;"><?php echo $info_estancia[1];?></span></h2>
+          <h2>Direccion: <span style="font-weight: normal;"><?php echo $info_estancia[2];?></span></h2>
+          <h2>Telefono: <span style="font-weight: normal;"><?php echo $info_estancia[3];?></span></h2>
 
           <iframe height="350" frameborder="0" style="width: 100%;clear: both;position: fixed;bottom: 0;z-index:2000;" src="https://www.google.com/maps/embed/v1/place?q=<?php echo $info_estancia[2]; ?>&key=AIzaSyASd10WQhVts73MLA5fmb32XP_433pAios" allowfullscreen></iframe>
     </div>
