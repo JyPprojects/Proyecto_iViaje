@@ -108,19 +108,19 @@ elseif(isset($_POST["ver_pdf"])){
     $html .= '
     <br><br><br><br>
     <h1><u>INFORMACIÓN DEL VIAJE</u></h1>
-    <h2>Nombre viaje: '.$info_viaje[0].'</h2>
-    <h2>Pais: '.$info_viaje[1].'</h2>
-    <h2>Inicio del viaje: '.$info_viaje[2].'</h2>
-    <h2>Final del viaje: '.$info_viaje[3].'</h2>
-    <h2>Duración del viaje: '.$dias.'</h2>
+    <h2>Nombre viaje: <span style="font-weight: normal;">'.$info_viaje[0].'</span></h2>
+    <h2>Pais: <span style="font-weight: normal;">'.$info_viaje[1].'</span></h2>
+    <h2>Inicio del viaje: <span style="font-weight: normal;">'.$info_viaje[2].'</span></h2>
+    <h2>Final del viaje: <span style="font-weight: normal;">'.$info_viaje[3].'</span></h2>
+    <h2>Duración del viaje: <span style="font-weight: normal;">'.$dias.'</span></h2>
     <h1><u>TRANSPORTE</u></h1>
-    <h2>Medio de transporte: '.$info_transporte[1].'</h2>
-    <h2>Cantidad: '.$info_transporte[2].'</h2>
-    <h2>Tipo de Combustible: '.$info_transporte[3].'</h2>
+    <h2>Medio de transporte: <span style="font-weight: normal;">'.$info_transporte[1].'</span></h2>
+    <h2>Cantidad: <span style="font-weight: normal;">'.$info_transporte[2].'</span></h2>
+    <h2>Tipo de Combustible: <span style="font-weight: normal;">'.$info_transporte[3].'</span></h2>
     <h1><u>ALOJAMIENTO</u></h1>
-    <h2>Tipo de alojamiento: '.$info_estancia[1].'</h2>
-    <h2>Direccion: '.$info_estancia[2].'</h2>
-    <span><h2>Telefono Alojamiento:</h2> '.$info_estancia[3].'</span>
+    <h2>Tipo de alojamiento: <span style="font-weight: normal;">'.$info_estancia[1].'</span></h2>
+    <h2>Direccion: <span style="font-weight: normal;">'.$info_estancia[2].'</span></h2>
+    <h2>Telefono Alojamiento: <span style="font-weight: normal;">'.$info_estancia[3].'</span></h2>
     <h1><u>PARTICIPANTES</u></h1>
     ';
 
