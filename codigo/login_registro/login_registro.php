@@ -40,12 +40,12 @@ if (isset($_POST["login"])){
 
                         if(isset($_POST["cookie"])){
                             setcookie("cookie1", $_POST["usu"],time()+604800);
-                            header("Location: ../Index.php");
+                            header("Location: ../index.php");
                             
                                 
                         }
                         else{
-                            header("Location: ../Index.php");
+                            header("Location: ../index.php");
                         }                                                 
                 }
                 else{?>

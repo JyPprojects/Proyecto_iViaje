@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  nginx-back:
+    build: .
+    image: gcr.io/proyectoprueba-308608/nginx-back:1.4
+    ports:
+      - 8080:80
+
+  mysql:
+    build: bbdd/
+    image: gcr.io/proyectoprueba-308608/mysql:1.9
+    ports:
+        - 23306:3306
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_ONETIME_PASSWORD:
+    volumes: 
+        - ~/docker/mysql-data:/var/lib/mysql #Con esto hacemos la bbdd persistente y los datos no se destruyen cuando matamos el contenedor
+                                            #En nuestro pc en /docker/mysql-data apunta a /var/lib/mysql del contenedor y guarda esos datos

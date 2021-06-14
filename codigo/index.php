@@ -24,7 +24,7 @@ include("php/sesion.php");
     </script>
     
 </head>
-<body background="menu_post-login/Imagenes/fondo avion.jpg">
+<body background="menu_post-login/imagenes/fondo avion.jpg">
 
 <?php 
 if (isset($_GET['viaje'])) {?>

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+service php7.3-fpm start
+
+chmod o+wr /run/php/php7.3-fpm.sock
