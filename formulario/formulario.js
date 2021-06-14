@@ -99,7 +99,7 @@ $(document).ready(function(event){
         var id = target.attr("id");
         var value = $("#"+id).val();
 
-        if(value=="Avión"){
+        if(value=="Avión" || value=="Caravana" || value=="Ave" || value=="Tren" || value=="Barco" || value=="Autobus"){
             $(".combustible2").hide();
             $(".cantidad").hide();
         }
