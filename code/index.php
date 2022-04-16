@@ -1,4 +1,5 @@
 <?php 
+echo "YEEEEPA";die;
 //INCLUDES
 include("php/sesion.php");
 ?>
