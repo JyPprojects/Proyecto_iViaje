@@ -1,6 +1,6 @@
 <?php 
-    include("../php/sesion.php");
-    include("consultas.php");
+    include('../php/sesion.php');
+    include('consultas.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<?php include("editar.php"); ?>
+<?php include('editar.php'); ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -50,7 +50,7 @@
                         <?php echo ucfirst($_SESSION["usuario"]); ?>
                     <?php } ?>
                     </a>
-                    <?php include("../php/admin2.php"); ?> 
+                    <?php include('../php/admin2.php'); ?> 
                 </li>
             </ul> 
         </div>

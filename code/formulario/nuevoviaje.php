@@ -2,9 +2,9 @@
 error_reporting();
 
 //INCLUDES
-include("../php/conexion.php");
-include("../php/sesion.php");
-include("../php/funciones.php");
+include('../php/conexion.php');
+include('../php/sesion.php');
+include('../php/funciones.php');
 
 if (isset($_POST["enviar"])){
  

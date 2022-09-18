@@ -1,6 +1,6 @@
 <?php
-include("../../php/conexion.php");
-include("../../php/funciones.php");
+include(../../php/conexion.php);
+include(../../php/funciones.php);
 
 $resultado = select_query("necesidad_viaje", "necesidades_viaje", "necesidad_viaje", "$_GET[input_nuevo]");
 

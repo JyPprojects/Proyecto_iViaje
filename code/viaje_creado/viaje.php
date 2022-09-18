@@ -1,6 +1,6 @@
 <?php
-include("viaje_creado.php");
-include("pdf.php");
+include(viaje_creado.php);
+include(pdf.php);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -53,7 +53,7 @@ include("pdf.php");
                     <?php echo ucfirst($_SESSION["usuario"]); ?>
                 <?php } ?>
               </a>
-              <?php include("../php/admin2.php"); ?> 
+              <?php include(../php/admin2.php); ?> 
             </li>
       </ul> 
     </div>
@@ -287,7 +287,7 @@ include("pdf.php");
       <p id="msg"></p>
       <div id="part">
       <?php  
-      include("participantes.php");
+      include(participantes.php);
       ?>
       </div>
       <form method="post" action="">

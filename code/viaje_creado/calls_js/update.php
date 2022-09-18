@@ -1,7 +1,6 @@
 <?php
-error_reporting(0);
 
-include("../../php/conexion.php");
+include(../../php/conexion.php);
 
 $input = preg_replace("/\_/", " ", $_GET["input"]);
 $id_oculto = preg_replace("/\_/", " ", $_GET["id_oculto"]);

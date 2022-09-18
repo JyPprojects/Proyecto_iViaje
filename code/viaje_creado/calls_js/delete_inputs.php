@@ -1,6 +1,6 @@
 <?php
-include("../../php/conexion.php");
-include("../../php/funciones.php");
+include(../../php/conexion.php);
+include(../../php/funciones.php);
 
 $input_delete=$_GET["input_delete"];
 

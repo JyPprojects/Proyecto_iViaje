@@ -3,11 +3,13 @@
 //ERRORES
 $error="";
 $registro="";
-error_reporting(0);
+
 
 //INCLUDES
-include("../php/conexion.php");
-include("../php/funciones.php");
+
+include('../php/conexion.php');
+
+include('../php/funciones.php');
 
 //LOGIN 
 if (isset($_POST["login"])){

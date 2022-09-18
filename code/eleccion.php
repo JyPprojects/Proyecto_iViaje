@@ -3,7 +3,7 @@
 $error="";
 
 //INCLUDES
-include("php/conexion.php");
+include('php/conexion.php');
 
 //CÓDIGO
 $consulta1="SELECT id_viaje FROM viajes_usuario WHERE id_usuario='$_SESSION[id_usuario]'";

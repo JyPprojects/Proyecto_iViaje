@@ -2,7 +2,7 @@
 $error="";
 $errorcontra="";
 
-include("../php/conexion.php");
+include('../php/conexion.php');
 
     if (isset($_POST['Actualizar'])) {
 

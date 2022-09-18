@@ -1,7 +1,7 @@
 <?php
 require_once("../librerias/TCPDF/tcpdf.php");
-include("../php/conexion.php");
-include("../php/sesion.php");
+include(../php/conexion.php);
+include(../php/sesion.php);
 
 //Sacamos los dias de duracion del viaje
 

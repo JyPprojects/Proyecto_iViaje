@@ -1,7 +1,6 @@
 <?php 
-echo "YEEEEPA";die;
 //INCLUDES
-include("php/sesion.php");
+include('php/sesion.php');
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +75,7 @@ if (isset($_GET['viaje'])) {?>
               <?php echo ucfirst($_SESSION["usuario"]); ?>
           <?php } ?>
           </a>
-          <?php include("php/admin.php"); ?> 
+          <?php include('php/admin.php'); ?> 
         </li>
       </ul> 
     </div>
@@ -87,7 +86,7 @@ if (isset($_GET['viaje'])) {?>
         <h1>Que desea hacer...</h1>
     </section>
 
-<?php include("eleccion.php");?> 
+<?php include('eleccion.php');?> 
 
 
         <footer>

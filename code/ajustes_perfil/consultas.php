@@ -1,5 +1,5 @@
 <?php 
-    include("../php/conexion.php");
+    include('../php/conexion.php');
 ?>
 <?php 
     $sql="SELECT correo, usuario, imagen, tipo_imagen FROM datosusuario WHERE id_usuario='$_SESSION[id_usuario]'";

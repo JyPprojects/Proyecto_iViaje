@@ -21,7 +21,7 @@
     
 </head>  
 <body>
-<?php  include("login_registro.php"); ?>
+<?php  include('login_registro.php'); ?>
  <form class="formulario" method="post">
     
     <h1>MAKE AND TRAVEL</h1>

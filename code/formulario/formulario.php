@@ -31,7 +31,7 @@
     <title>MAKE AND TRAVEL | Crea tu viaje</title>
 </head>
 <body>
-<?php include("nuevoviaje.php"); ?>
+<?php include('nuevoviaje.php'); ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -62,7 +62,7 @@
                     <?php echo ucfirst($_SESSION["usuario"]); ?>
                 <?php } ?>
               </a>
-              <?php include("../php/admin2.php"); ?> 
+              <?php include('../php/admin2.php'); ?> 
             </li>
       </ul> 
     </div>

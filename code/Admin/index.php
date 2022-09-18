@@ -12,8 +12,8 @@
     <title>Admin</title>
 </head>
 <?php 
-  include("../php/sesion.php");
-  include("consultas.php");
+  include('../php/sesion.php');
+  include('consultas.php');
 ?>
 <body>
 

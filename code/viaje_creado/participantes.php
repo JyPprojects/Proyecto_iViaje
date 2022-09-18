@@ -1,6 +1,6 @@
 <?php
-include("../php/conexion.php");
-include("../php/sesion.php");
+include('../php/conexion.php');
+include('../php/sesion.php');
 $error="";
 $sql6="SELECT usuario FROM datosusuario INNER JOIN viajes_usuario on datosusuario.id_usuario=viajes_usuario.id_usuario WHERE viajes_usuario.id_viaje=$_SESSION[id_viaje]";
 $query6=mysqli_query($conexion, $sql6);

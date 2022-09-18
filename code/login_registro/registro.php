@@ -53,8 +53,8 @@
 
 </head>  
 <body>
-<?php include("login_registro.php"); ?>
-<?php error_reporting(0); ?>
+<?php include('login_registro.php'); ?>
+<?php  ?>
 
  <form class="formulario" method="post">
     
