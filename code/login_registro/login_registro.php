@@ -6,9 +6,7 @@ $registro="";
 
 
 //INCLUDES
-
 include('../php/conexion.php');
-
 include('../php/funciones.php');
 
 //LOGIN 

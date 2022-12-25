@@ -1,10 +1,6 @@
 version: "3.9"
 volumes:
   bd: {}
-networks:
-  mysql_network:
-    name: mysql_network
-    driver: bridge
 services:
   web:
     image: gaonis/iviaje:base
@@ -14,21 +10,16 @@ services:
     ports:
       - 8080:80
   mysql:
-    image: gaonis/mysql:base
+    image: mysql:5.7
     container_name: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: testpass
+      # MYSQL_ROOT_PASSWORD: Kojaca009#
       MYSQL_DATABASE: iviaje
       MYSQL_USER: db_user1
       MYSQL_PASSWORD: pass
     ports:
       - 23306:3306
     volumes:
-      - ./bd/:/var/lib/mysql:rw
-    networks:
-      mysql_network:
-        aliases:
-          - mysql_host
-
+      - ./bd/test.sql:/docker-entrypoint-initdb.d/test.sql

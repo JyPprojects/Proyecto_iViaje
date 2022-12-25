@@ -4,15 +4,21 @@ base-build:
 base-push:
 	docker push gaonis/iviaje:base
 
-app-build:
-	DOCKER_BUILDKIT=1 docker build -t iviaje:test . --target=app --build-arg IMAGE_BASE=gaonis/iviaje:base
+app-run:
+	docker run --name iviaje  -v ${PWD}/code:/code --rm -d -p 8080:80 gaonis/iviaje:base
 
-run-app:
-	docker run --name iviaje --rm -d -p 8080:80 -it iviaje:test
+develop-build-push:
+	DOCKER_BUILDKIT=1 docker build -t gaonis/iviaje:develop --target develop .
+	docker push gaonis/iviaje:develop
+
+composer-install:
+	docker run -v ${PWD}/code:/code -w /code --rm -it gaonis/iviaje:develop 'composer' 'install'
 
 exec:
 	docker exec -it iviaje sh
 
 stop:
 	docker stop iviaje
-	docker rm iviaje
+
+docker-compose-up:
+	docker compose --env-file ./code/env/env.env up -d

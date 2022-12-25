@@ -1,0 +1,10 @@
+{
+    "name": "iviaje/project",
+    "type": "project",
+    "description": "php dotenv library",
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+        "symfony/polyfill-iconv": "^1.25"
+    }
+
+}

@@ -1,5 +1,4 @@
 <?php 
-
 // session_start(); NO FUNCIONA EL SESSION START
 
 if(!isset($_SESSION["usuario"])){
@@ -17,10 +16,5 @@ if (isset($_GET["exit"])){
 }
 else{    
 }
-
-
-
-
-
 
 ?>
